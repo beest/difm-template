@@ -88,8 +88,8 @@
 }
 
 // Image Widget
-.image-widget__image-title,
-.image-widget__image-description {
+.imagewidget__image-title,
+.imagewidget__image-description {
     color: @font-swatch5-color;
 }
 
@@ -269,11 +269,17 @@ button,
 //  8.5  #CLICK TO CALL
 //  --------------
 
-.click-to-call a {
+.clicktocall a, .company-phone-number a {
     .transition(.5s, all, ease-out);
+    @media @mobile {
+        color: @font-swatch7-color;
+    }
     &:hover {
         color: darken(@color-swatch2, 4%);
         text-decoration: none;
+        @media @mobile {
+            color: @font-swatch7-color;
+        }
     }
 }
 
@@ -352,17 +358,25 @@ button,
 // -----------------------------
 
 .tweet-item {
+    // Image and content inline
     .avatar, .tweet-wrap {
         display: inline-block;
     }
+    // Twitter image
     .avatar {
         margin-right: 20px;
     }
+    // Twitter handle
     .account-name {
         font-family: @font-swatch5-font-family;
-        font-size: @font-swatch9-font-size;
+        font-size: bkscale(@font-swatch9-font-size, 0.9);
         font-weight: @font-swatch5-font-weight;
     }
+    // Tweet text content
+    .tweet-content {
+        font-size: bkscale(@font-swatch5-font-size, 0.95);
+    }
+    // Twitter data
     .tweet-metadata, .tweet-metadata a {
         color: @font-swatch6-color;
         font-size: bkscale(@font-swatch5-font-size, 0.9)
@@ -385,4 +399,6 @@ hr.rule {
 // 14. #Profile
 // -----------------------------
 
-// Add styles here...
+.address-line {
+    padding-bottom: 2px;
+}
