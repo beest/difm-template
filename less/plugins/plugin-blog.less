@@ -1,0 +1,205 @@
+// -------------------------------------
+// Blog Post Styling
+// -------------------------------------
+
+//  1.   Blog Post List
+//  2.	 Blog Post
+
+
+
+// -----------------------------
+// 1. Blog Post List
+// -----------------------------
+
+
+// Blog Post List Layout
+.bk-blogpostlist {
+	.post-article {
+		margin-bottom: 50px;
+		display: inline-block;
+		margin-right: 5%;
+		width: 45%;
+		vertical-align: top;
+		@media @tablet {
+			margin-right: 0;
+			width: 100%;
+		}
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+		.post-image {
+			background-color: rgb(248,248,248);
+			height: 250px;
+		}
+		.blog-post-list__image {
+			max-height: 250px;
+		}
+	}
+}
+
+
+// Blog Post Header Text
+.post-header {
+	margin-top: 25px;
+	a {
+		color: @font-swatch4-color;
+		text-decoration: none;
+		.transition(all, .5s, ease-out);
+	}
+}
+
+
+// Blog Post Excerpt Text
+
+.post-excerpt p {
+	padding: 6px 0 16px;
+}
+
+// Read More Link
+.read-more {
+	background-color: @color-swatch2;
+	color: @font-swatch7-color;
+	display: inline-block;
+	font-family: @font-swatch7-font-family;
+	font-size: @font-swatch7-font-size;
+	letter-spacing: @font-swatch7-letter-spacing;
+	margin-top: 6px;
+	padding: 8px 8px 6px;
+	text-transform: uppercase;
+	.transition(all, .5s, ease-out);
+	&:hover {
+		background-color: lighten(@color-swatch2, 6%);
+		text-decoration: none;
+	}
+}
+
+// Datestamp
+.post-footer time {
+	color: lighten(@font-swatch5-color, 25%);
+	font-size: bkscale(@font-swatch5-font-size, 0.9);
+}
+
+@-webkit-keyframes icon-bounce {
+	0% {transform:translateX(0);}
+	50% {trnsform:translateX(-4px);}
+	100% {transform:translateX(-8px);}
+}
+
+@keyframes icon-bounce {
+	0% {transform:translateX(0);}
+	50% {trnsform:translateX(-4px);}
+	100% {transform:translateX(-8px);}
+}
+
+// Pagination
+.post-pagination {
+	.button--previous {
+		padding-left: 35px;
+		position: relative;
+		&:before {
+			font-size: 10px;
+			position: absolute;
+			left: 20px;
+		}
+		&:hover:before {
+    		.animation(icon-bounce, 1.5s, linear, infinite, normal);
+		}
+	}
+	.button--next {
+		padding-right: 35px;
+		position: relative;
+		&:after {
+			font-size: 10px;
+			position: absolute;
+			right: 14px;
+			top: 10px;
+		}
+		&:hover:after {
+    		.animation(icon-bounce, 1.5s, linear, infinite, reverse);
+		}
+	}
+}
+
+
+
+// -----------------------------
+// 2. Blog Post
+// -----------------------------
+
+
+// Blog Post Body
+.bk-blogpost {
+	.body-content {
+		margin: 0 auto;
+		max-width: 750px;
+	}
+	// Blog Post Title
+	.post-title {
+		margin: 50px 0 30px;
+		text-align: center;
+	}
+	// Date
+	.post-footer time {
+		float: right;
+	}
+	// Blog Footer
+	.post-footer {
+		margin-top: 50px;
+	}
+}
+
+// Category & Tags
+.post-attributes {
+	display: inline-block;
+	margin: 0 0 10px;
+	width: 75%;
+	.post-category, .post-tags {
+		display: inline-block;
+		width: auto;
+	}
+	.post-category {
+		margin-right: 20px;
+	}
+	// Label
+	p, a {
+		color: @color-swatch4;
+		display: inline-block;
+		font-family: @font-swatch7-font-family;
+		font-size: bkscale(@font-swatch7-font-size, 0.9);
+		font-weight: @font-swatch4-font-weight;
+		text-transform: uppercase;
+	}
+	.category-title, .tags-title {
+		// Double Colon For Label
+		&:after {
+			content: ":";
+			font-size: 16px;
+			margin: 0 5px 0 3px;
+			position: relative;
+		}
+	}
+	// Categorys
+	.category-link {
+		background-color: @color-swatch7;
+		color: @color-swatch5;
+		padding: 6px 8px;
+		.transition(all, .5s, ease-out);
+		&:hover {
+			background-color: darken(@color-swatch7, 8%);
+			color: @color-swatch4;
+			text-decoration: none; 
+		}
+	}
+	// Tags
+	.tag-link {
+		background-color: @color-swatch7;
+		color: @color-swatch5;
+		padding: 6px 8px;
+		.transition(all, .5s, ease-out);
+		&:hover {
+			background-color: darken(@color-swatch7, 8%);
+			color: @color-swatch4;
+			text-decoration: none; 
+		}
+	}
+}

@@ -1,0 +1,292 @@
+// -----------------------------
+// Table of Contents
+// -----------------------------
+
+// 1. #SINGLE PRODUCT
+// 2. #PRODUCT LIST
+// 3. #BASKET WIDGET
+// 4. #BASKET SUMMARY
+
+
+// -------------------------------
+// 1. #Single Product
+// -------------------------------
+
+// No styles here...
+
+
+
+// -----------------------------
+// 2. Product List
+// -----------------------------
+
+// Product List
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;     
+}
+
+// Product Item
+.product-item {
+    position: relative;
+    width: 32%;
+    margin-bottom: 2%;
+    // Display 100% at mobile
+    @media @mobile {
+        width: 100%;
+        margin-bottom: 4%;
+    }
+}
+
+.product-filters {
+    .form-group:nth-child(-n+4) {
+        float: left;
+        margin-right: 2%;
+        width: 23%;
+    }
+    .form-group select {
+        height: 50px;
+        padding: 0 12px;
+        width: 100%;
+    }
+}
+
+.product-item-details {
+    .product-item-title {
+        margin: 18px 0 5px;
+        a {
+            color: @font-swatch4-color;
+            font-size: bkscale(@font-swatch2-font-size, 0.82);
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    .product-item-price {
+        color: @color-swatch2;
+        font-family: @font-swatch4-font-family;
+        font-size: @font-swatch3-font-size;
+        font-weight: @font-swatch4-font-weight;
+        padding-bottom: 0;
+    }
+}
+
+// Pagination
+.listing-pagination {
+    // Previous & Next Pagination Text
+    .product-listing__pagination-item span {
+        display: none;
+    }
+    // Previous Button Icon
+    .button--previous {
+        position: relative;
+        &:before {
+            font-size: 10px;
+        }
+        &:hover:before {
+            .animation(icon-bounce, 1.5s, ease, infinite, normal);
+        }
+    }
+    // Next Button Icon
+    .button--next {
+        position: relative;
+        &:after {
+            font-size: 10px;
+        }
+        &:hover:after {
+            .animation(icon-bounce, 1.5s, ease, infinite, reverse);
+        }
+    }
+}
+
+
+
+// -----------------------------
+// 3. Basket Widget
+// -----------------------------
+
+.basket__basket-item { position: relative; }
+.basket__item-image  { width: 200px; }
+
+// Display basket image and content inline
+.basket-item-image,
+.basket-item-details {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    @media @tablet {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+// Item Remove Button
+.item-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    // Remove icon spacing
+    &:before {
+        margin-right: 0;
+    }
+}
+// Hide button text
+.remove-text { 
+    display: none;
+}
+
+// Basket Image
+.basket__image {
+    max-height: 200px;
+    max-width: 200px;
+    @media @mobile {
+        max-height: inherit;
+    }
+}
+
+
+
+// -------------------------------
+// 4. Single Product
+// -------------------------------
+
+.product-article {
+    // Inline Image & Content
+    .product-images, 
+    .product-content {
+        display: inline-block;
+        float: left;
+        @media @tablet {
+            display: block;
+            float: initial;
+        }
+    }
+    // Product Images
+    .product-images {
+        width: 50%;
+        @media @tablet {
+            width: 100%;
+        }
+    }
+    // Product Content
+    .product-content {
+        margin-left: 5%;
+        width: 45%;
+        @media @tablet {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+    // Product Title
+    .product-title {
+        font-size: bkscale(@font-swatch1-font-size, 0.9);
+    }
+    // Product Price
+    .product-price {
+        color: @color-swatch2;
+        font-size: bkscale(@font-swatch3-font-size, 1.05);
+    }
+    // Product Description
+    .product-description {
+        color: lighten(@font-swatch5-color, 25%);
+        font-size: bkscale(@font-swatch5-font-size, 0.9);
+        padding-bottom: 15px;
+    }
+    // Product Form Group (Select & Buttons)
+    .product-actions {
+        position: relative;
+        .form-group {
+            margin-bottom: 0;
+        }
+    }
+    // Inline Cart Buttons
+    .form-group, 
+    .product__input, 
+    .product-button {
+        display: inline-block;
+    }
+    // Add To Basket Button
+    .product__input {
+        margin-top: 20px;
+    }
+    // View Bakset Button Wrapper
+    .view-basket-wrap {
+        bottom: 0;
+        display: inline-block;
+        height: 48px;
+        left: 175px;
+        position: absolute;
+        // View Basket Button
+        .product__button {
+            background-color: fade(@font-swatch7-background-color, 50%);
+            .transition(.5s, all ,ease-out);
+            &:hover {
+                background-color: @font-swatch7-background-color;
+            }
+        }
+    }
+}
+
+.product-attributes {
+    margin: 20px 0;
+    p, a {
+        font-family: @font-swatch7-font-family;
+        font-size: bkscale(@font-swatch7-font-size, 0.9);
+        font-weight: @font-swatch4-font-weight;
+        text-transform: uppercase;
+    }
+    .product-category, 
+    .product-tags {
+        margin-bottom: 10px;
+    }
+    .tag-link, 
+    .category-link {
+        background-color: @color-swatch7;
+        color: @color-swatch5;
+        padding: 2px 8px;
+        .transition(all, .5s, ease-out);
+        &:hover {
+            background-color: darken(@color-swatch7, 8%);
+            text-decoration: none; 
+        }
+    }
+}
+
+
+
+// -------------------------------
+// 5. Product Summary
+// -------------------------------
+
+.widget__ecombasketsummary {
+    .cell--header {
+        font-family: @font-swatch4-font-family;
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: @font-swatch4-font-weight;
+    }
+    .summary-item-title {
+        line-height: 1.6;
+        a {
+            color: @font-swatch5-color;
+        }
+    }
+    .quantity-wrap {
+        text-align: center;
+    }
+    .button--quantity, 
+    .quantity-field {
+        margin: 0;
+        vertical-align: top;
+    }
+    .quantity-field {
+        font-size: 15px;
+    }
+    .button--submit {
+        border: 0;
+        color: @font-swatch7-color;
+        height: auto;
+    }
+}

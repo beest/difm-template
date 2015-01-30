@@ -1,0 +1,44 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<!-- CONTAINER -->
+<div class="template-container">
+
+	<!-- HEADER -->
+	{% include "includes/header.twig" %}
+
+	<!-- MAIN SECTION -->
+	<div role="main" id="main">
+
+		<!-- GALLERY -->
+		{{widget('gallery', 'home-gallery', {'images':[
+			{'imageHeight':'550', 'imageWidth':'300', 'url':'http://placehold.it/350x300', 'title':'test title', 'description': 'test desc'},
+			{'imageHeight':'600', 'imageWidth':'300', 'url':'http://placehold.it/600x450', 'title':'test title', 'description': 'test desc'},
+			{'imageHeight':'350', 'imageWidth':'200', 'url':'http://placehold.it/200x350', 'title':'test title', 'description': 'test desc'},
+			{'imageHeight':'350', 'imageWidth':'400', 'url':'http://placehold.it/400x100', 'title':'test title', 'description': 'test desc'},
+			{'imageHeight':'550', 'imageWidth':'300', 'url':'http://placehold.it/350x300', 'title':'test title', 'description': 'test desc'},
+			{'imageHeight':'600', 'imageWidth':'300', 'url':'http://placehold.it/600x450', 'title':'test title', 'description': 'test desc'},
+			{'imageHeight':'350', 'imageWidth':'200', 'url':'http://placehold.it/200x350', 'title':'test title', 'description': 'test desc'},
+			{'imageHeight':'350', 'imageWidth':'400', 'url':'http://placehold.it/400x100', 'title':'test title', 'description': 'test desc'},
+			{'imageHeight':'350', 'imageWidth':'400', 'url':'http://placehold.it/400x100', 'title':'test title', 'description': 'test desc'}
+		]})|raw}}
+
+	</div>
+	<!-- END MAIN SECTION -->
+
+</div>
+<!-- END CONTAINER -->
+
+<!-- MASONRY GALLERY -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script>
+
+<script>
+	var container = document.querySelector('.gallery-list');
+		var msnry = new Masonry( container, {
+			// options
+			itemSelector: '.gallery-item'
+	});
+</script>
+
+{% endblock %}

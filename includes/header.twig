@@ -1,0 +1,13 @@
+<header class="template-header">
+	<!--{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png')})|raw}}-->
+	{{widget('companyname', 'companyname', {"business": "MASONRY"})|raw}}
+	<nav class="template-nav">
+		{{widget('extendednavigation', 'header-nav', {"align":"left"})|raw}}
+	</nav>
+	<footer class="template-footer">
+		<div class="footer-info">
+			{{widget('profile', 'header-social', { 'profileType':'socialicons'})|raw}}
+			{{widget('profile', 'header-copyright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+		</div>
+	</footer>
+</header>

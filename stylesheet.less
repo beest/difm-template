@@ -1,0 +1,498 @@
+#tdk-toolbar, .in-tdk #page-zones__main-widgets__responsiveslideshowWidget   {
+	display: none;
+}
+
+// -----------------------------
+// Table of Contents
+// -----------------------------
+
+//  1.   LESS Includes
+//  2.	 Mixins
+
+
+
+// -----------------------------
+// 1. LESS Includes
+// -----------------------------
+
+
+// BK LESS Framework Include
+// -------------------------
+
+@import "@{templateCommon}/bk-less-framework.less";
+
+
+// Theme Includes
+// --------------
+
+@import "@{templateLocal}/less/colors.less"; 	  // Colors
+@import "@{templateLocal}/less/typography.less";  // Typography
+@import "@{templateLocal}/less/widgets.less";     // Widgets
+
+
+// Plugin Includes
+// ---------------
+
+@import "@{templateLocal}/less/plugins/plugin-blog.less";      // Plugin: Blog CSS
+@import "@{templateLocal}/less/plugins/plugin-menu.less";      // Plugin: Menu CSS
+@import "@{templateLocal}/less/plugins/plugin-ecommerce.less"; // Plugin: Ecommerce CSS
+
+
+
+// -----------------------------
+// 2. Mixins
+// -----------------------------
+
+
+@tablet: ~"only screen and (max-width: 800px)";
+
+.border-radius (@radius: 6px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.transition (@prop: all, @time: 0.5s, @ease: ease) {
+	-webkit-transition: @prop @time @ease;  
+	-moz-transition:    @prop @time @ease;
+	-ms-transition:     @prop @time @ease; 
+	-o-transition:      @prop @time @ease;  
+}
+
+.animation (@name, @duration: 2s, @ease: ease, @time: infinite, @direction: normal) {
+	-webkit-animation: @name @duration @ease @time @direction;
+	-moz-animation:    @name @duration @ease @time @direction;
+	-ms-animation:     @name @duration @ease @time @direction;
+	animation: 		   @name @duration @ease @time @direction;
+}
+
+
+
+// -----------------------------
+// 3. Global
+// -----------------------------
+
+
+// Links
+.content-widget a {
+	border-bottom: 1px dotted @color-swatch2;
+	.transition(all, 0.25s, ease-out);
+	&:hover {
+		border-bottom: 1px dotted darken(@color-swatch2, 4%);
+		color: darken(@color-swatch2, 4%);
+		text-decoration: none;
+		.transition(all, 0.25s, ease-in);
+	}
+}
+
+.email-address a, .company-phone-number a {
+	.transition(.5s, all, ease-out);
+	&:hover {
+		color: darken(@color-swatch2, 4%);
+		text-decoration: none;
+	}
+}
+
+
+// Blockquote
+blockquote {
+	border-left: 4px solid fade(@color-swatch2, 40%);
+	margin: 10px 0;
+	padding-left: 25px;
+	&:before {
+		content: "";
+	}
+}
+
+
+// Pre + Code
+pre { font-size: 14px; }
+
+code { padding: 2px 5px; }
+
+
+// Buttons
+.button {
+	padding: 10px 20px 8px;
+	text-transform: uppercase;
+	.transition(all, 0.5s, ease-out);
+	&:hover {
+		background-color: @font-swatch7-background-color-hover;
+	}
+}
+
+
+// Form Elements
+legend { display: none; }
+
+label {
+	font-family: @font-swatch7-font-family;
+	font-size: bkscale(@font-swatch7-font-size, 0.9);
+	font-weight: @font-swatch4-font-weight;
+	text-transform: uppercase;
+}
+
+input.input, .textarea, select, .input--search.product-listing__input {
+	border: 3px solid @color-swatch7;
+	border-radius: none;
+	color: lighten(@font-swatch5-color, 20%);
+	font-family: bkscale(@font-swatch5-font-family, 0.9);
+	font-size: bkscale(@font-swatch5-font-size, 0.88);
+	padding: 12px;
+	height: 48px;
+}
+
+
+// Focus State
+input[type="search"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus, .input--single-line:focus {
+	border-color: lighten(@color-swatch3, 50%);
+	.transition(.3s, all, ease-in)
+}
+
+
+
+// -----------------------------
+// 3. Layout
+// -----------------------------
+
+.template-container {
+	margin: 0 auto;
+	max-width: 1200px;
+	@media only screen and (max-width: 1250px) {
+		margin: 0 30px;
+	}
+}
+
+
+
+// -----------------------------
+// 4. Header
+// -----------------------------
+
+
+.template-header {
+	// Flex
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	min-height: 100vh;
+
+	float: left;
+	padding-top: 50px;
+	width: 25%;
+	@media @tablet {
+		display: block;
+		min-height: initial;
+		width: 100%;
+	}
+	// Footer
+	.template-footer {
+		display: block;
+		@media @tablet {
+			display: none;
+		}
+	}
+}
+
+
+// Company Name
+// ------------
+
+.companyname {
+	@media @tablet {
+		text-align: center;
+	}
+}
+
+.company-link {
+	border: 4px solid @color-swatch4;
+	padding: 2px 12px;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+
+// Social
+// -------
+
+.widget__profile .social-icons {
+	@media @tablet {
+		display: none;
+	}
+	.social-name { display: none; }
+	.icon {
+		color: gainsboro;
+		text-decoration: none!important;
+		&:before { 
+			font-size: 22px; 
+		}
+		&:hover {
+			.transition(all, .5s, ease-out);
+		}
+	}
+	.icon--twitter:hover { color: #4099FF; }
+	.icon--facebook:hover { color: #335795; }
+	.icon--googleplus:hover { color: #D34836; }
+	.icon--youtube:hover { color: #D34836; }
+	.icon--rss:hover { color: #FF6200; }
+	.icon--linkedin:hover { color: #03659A; }
+}
+
+
+
+// Copyright
+// ---------
+
+.company-copyright {
+	@media @tablet {
+		display: none;
+	}
+	.copyright {
+		color: lighten(@font-swatch5-color, 50%);
+		font-family: @font-swatch4-font-family;
+		font-size: bkscale(@font-swatch5-font-size, 0.9);
+		margin-top: 10px;
+	}
+}
+
+
+// Navigation
+// ----------
+
+.template-nav {
+	// Flex
+	display: flex;
+	flex: 1 0 auto;
+
+	margin: 4rem 0 12rem;
+	@media @tablet {
+		display: block;
+		margin: 2rem 0 2rem;
+	}
+}
+
+[data-widget-type="extendednavigation"] { width: 100%; }
+
+
+// Navigation List
+.navigation-body {
+	@media @tablet {
+		height: 0;
+		padding: 0;
+		opacity: 0;
+		.transition(all, 0.5s, ease-out);
+		visibility: hidden;
+
+		/*display: none;
+		opacity: 0;
+		.transition(all, .5s, ease-out);*/
+		&.js-pull {
+			height: auto;
+			padding: 20px 20px 20px 0;
+			position: relative;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+
+// List Item
+.navigation-item {
+	display: block;
+	&:after {
+		border-bottom: 1px solid @color-swatch7;
+		content: "";
+		display: block;
+		max-width: 100%;
+	}
+	&:hover .navigation-list--children {
+		height: auto;
+		padding: 20px 20px 20px 0;
+		position: relative;
+		opacity: 1;
+		visibility: visible;
+	}
+	&:last-child {
+		border-bottom: 0;
+	}
+	// Dropdown Item
+	.item-name {
+		padding-left: 0;
+		.transition(all, 0.5s, ease-out);
+		&:hover {
+			color: darken(@color-swatch6, 40%);
+		}
+	}
+	// Dropdown Arrow
+	.item-name--parent:after {
+		border: 4px solid transparent;
+		border-top-color: @font-swatch6-color;
+		margin: 2px 8px;
+	}
+	&.selected .item-name {
+		color: darken(@color-swatch6, 40%);
+	}
+	// Dropdown Folder
+	.navigation-list--children {
+		height: 0;
+		padding: 0;
+		opacity: 0;
+		.transition(all, 0.5s, ease-out);
+		visibility: hidden;
+	}
+}
+
+
+// Toggle Button
+.navigation-toggle {
+	display: none;
+	&:after {
+		content: "+";
+		position: absolute;
+		right: 0;
+	}
+	@media @tablet {
+		background: transparent;
+		border-bottom: 1px solid @color-swatch7;
+		color: @color-swatch4;
+		display: block;
+		font-weight: @font-swatch4-font-weight;
+		padding: 12px 0;
+		text-align: left;
+		text-transform: uppercase;
+		width: 100%;
+		&:hover {
+			background: transparent;
+		}
+	}
+}
+
+
+
+// -----------------------------
+// 5. Main
+// -----------------------------
+
+
+div[role="main"] {
+	display: inline-block;
+	float: left;
+	padding: 50px 0 0 5%;
+	width: 75%;
+	@media @tablet {
+		display: block;
+		padding: 20px 0 0;
+		width: 100%;
+	}
+}
+
+
+// Masonry Gallery
+// ---------------
+
+.gallery-item {
+	// Gallery List Items
+	float: left;
+	margin-bottom: 25px;
+	height: auto;
+	width: 33.33%;
+	@media @tablet {
+		width: 50%;
+	}
+	@media @mobile {
+		width: 100%;
+	}
+	&> {
+		.transition(all, 0.5s, ease-out);
+	}
+	// Gallery Anchor Link
+	.image-link {
+		background-image: none!important;
+		height: auto;
+		margin-right: 25px;
+		@media @tablet {
+			margin-right: 15px;
+		}
+		@media @mobile {
+			margin-right: 0;
+		}
+		&:hover {
+			// Image Caption
+			.image-gallery__caption {
+				background-color: transparent;
+				height: auto;
+				padding: 20px 20px 20px 0;
+				position: relative;
+				opacity: 1;
+				visibility: visible;
+				span {
+					color: @font-swatch4-color;
+					font-size: bkscale(@font-swatch5-font-size, 0.9);
+				}
+			}
+		}
+	}
+	//Image Caption 
+	.image-gallery__caption {
+		background-color: transparent;
+		display: block;
+		height: 0;
+		padding: 0;
+		opacity: 0;
+		.transition(all, 0.5s, ease-out);
+		visibility: hidden;
+	}
+	// Gallery Inline Image
+	.image {
+		display: block;
+		max-width: 100%;
+	}
+}
+
+// Gallery Masonry Transitions
+.masonry,
+.masonry .masonry-brick {
+  -webkit-transition-duration: 0.3s;
+     -moz-transition-duration: 0.3s;
+      -ms-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+      -ms-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+
+
+
+// -----------------------------
+// 4. Footer
+// -----------------------------
+
+.template-footer {
+	display: none;
+	@media @tablet {
+		display: block;
+		float: left;
+		margin: 30px 0;
+		text-align: center;
+		width: 100%;
+		.social-icons, .company-copyright {
+			display: block;
+		}
+	}
+}
