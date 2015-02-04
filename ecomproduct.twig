@@ -1,0 +1,56 @@
+{% extends "layout.twig" %}{{widget('ecomproduct', 'singleproduct', {})|raw}}
+{% block content %}
+
+<!-- CONTAINER -->
+<div class="template-container">
+
+	<!-- HEADER -->
+	{% include "includes/header.twig" %}
+
+	<!-- MAIN SECTION -->
+	<div role="main">
+
+		<!-- MAIN WIDGET ZONE -->
+		{{widget('ecomproduct', 'singleproduct', {})|raw}} 
+
+	</div>
+	<!-- END MAIN SECTION -->
+
+	<!-- FOOTER -->
+	{% include "includes/footer.twig" %}
+
+</div>
+<!-- END CONTAINER -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$('.product-gallery').each(function(){
+	  var max = 3
+	  if ($(this).find("li").length > max) {
+	    $(this)
+	      .find('li:gt('+max+')')
+	      .hide()
+	      .end()
+	      .append(
+	        $('<a class="ecom-view-more" id="ecomscroll" href="#">Next</a>').click( function(){
+	          $(this).siblings(':hidden').show().end();
+	        })
+	    );
+	  }
+	});
+</script>
+
+<script>
+$('#ecomscroll').click(function(e) {
+	e.preventDefault();   
+	var id = e.target.id;
+        if(id == 'ecomscroll'){
+            $('ul.product-gallery li:first').appendTo('ul.product-gallery');
+        }else{
+            $('ul.product-gallery li:last').prependTo('ul.product-gallery');
+        }
+    });
+</script>
+
+{% endblock %}

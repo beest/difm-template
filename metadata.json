@@ -2,7 +2,7 @@
     "name": "Masonry",
     "thumbnail": "thumbnail.png",
     "widgetVersion": 2,
-    "pageTypes": "home",
+    "pageTypes": ["home", "blogpost"],
     "colorSwatches":
     {
         "Swatch 1": {
