@@ -31,7 +31,7 @@
 .product-item {
     position: relative;
     width: 32%;
-    margin-bottom: 2%;
+    margin-bottom: 30px;
     // Display 100% at mobile
     @media @mobile {
         width: 100%;
@@ -71,6 +71,10 @@
         margin: 18px 0 5px;
         color: @font-swatch4-color;
         font-size: bkscale(@font-swatch2-font-size, 0.82);
+        a {
+            color: @font-swatch4-color;
+            text-decoration: none;
+        }
     }
     .product-item-price {
         color: @color-swatch2;
@@ -394,7 +398,6 @@
         height: auto;
     }
 }
-
 .ecom-view-more {
     background-color: white;
     position: absolute;
@@ -407,5 +410,36 @@
         text-align: right;
         top: 35px;
         width: auto;
+    }
+}
+
+
+
+// -------------------------------
+// 6. Basket Summary
+// -------------------------------
+
+.widget__ecombasket {
+    .basket-item-name {
+        color: @font-swatch4-color;
+        font-family: @font-swatch4-font-family;
+        font-size: bkscale(@font-swatch3-font-size, 1.05);
+    }
+    .basket-item-price {
+        color: @color-swatch2;
+        font-family: @font-swatch4-font-family;
+        line-height: 24px;
+    }
+    .item-quantity {
+        font-family: @font-swatch7-font-family;
+        font-size: bkscale(@font-swatch7-font-size, 0.9);
+        font-weight: @font-swatch4-font-weight;
+        line-height: 24px;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
+    .item-remove {
+        background-color: @color-swatch5;
+        padding: 8px 10px;
     }
 }

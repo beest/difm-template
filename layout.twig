@@ -16,13 +16,11 @@
 	<title>{{ page.title }}</title>
 	<meta name="keywords" content="{{ page.keywords }}" />
 	<meta name="description" content="{{ page.description }}" />
-	<meta http-equiv="content-language" content="{{ page.seoLang }}" />
 
 	{% if site.favicon %}
 		<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
 		<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
 	{% endif %}
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
 	{% include basekit.headScript %}
@@ -33,6 +31,33 @@
 	{% endblock %}
 
     {% include basekit.bodyScript %}
+
+	<!-- jQuery --> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- Fast Click -->
+    <script src="{{ asset('js/fastclick.js')}}"></script>
+
+
+	<!-- Menu Navigation Toggle -->
+    <script>
+		$(function() {
+		    FastClick.attach(document.body);
+		});
+
+    	// Toggles class open to display/hide the whole navigation
+    	$( ".navigation-toggle" ).click(function() {
+  			$( ".bk-extendednavigation" ).toggleClass( "open" );
+		});
+
+    	// Toggles class open to display/hide folders
+		$( ".navigation-item.folder" ).each(function() {
+			$( this ).click(function() {
+	  			$( this ).toggleClass( "open" );
+			});	
+		});
+
+	</script>
 
 </body>
 </html>
