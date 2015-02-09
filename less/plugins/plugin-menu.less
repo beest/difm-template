@@ -2,13 +2,33 @@
 // Menu Styling
 // -------------------------------------
 
-//  1.   Menu Navigation
-//  2.	 Menu List
+//  1.   Menu Search
+//  2.   Menu Navigation
+//  3.	 Menu List
 
 
 
 // -----------------------------
 // 1. Menu Navigation
+// -----------------------------
+
+.blogsearch {
+	margin-bottom: 40px;
+	.form-body {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;  
+	}
+	.form-group {
+		width: 88%;
+	}
+}
+
+
+
+// -----------------------------
+// 2. Menu Navigation
 // -----------------------------
 
 
@@ -40,16 +60,27 @@
 }
 
 
-//
-
-.menu__section-header {
-	margin: 60px 0 40px;
+// Menu Section Header
+.menu__menu-section .section-header {
+	margin-bottom: 40px;
+	padding: 50px 0 30px;
 }
+
+// Menu Section Featured Header
+.menu-subsection .menu-section--featured .section-header {
+	margin-bottom: 0;
+	padding: 30px 0;
+}
+
 
 .menu-item {
 	// Menu Item
 	.item-article {
 		margin-bottom: 30px;
+	}
+	// Content Wrapper
+	.item-content {
+		margin-top: 0;
 	}
 	// Menu Title
 	.item-title {
@@ -110,7 +141,6 @@
 
 // Menu Subsection
 .menu-section {
-	border-top: 1px solid @color-swatch7;
 	border-bottom: 1px solid @color-swatch7;
 	.section-subtitle {
 		color: @font-swatch5-color;
@@ -130,6 +160,7 @@
 // Item Image
 .item-image {
 	background-color: darken(@color-swatch1,5%);
+	margin-bottom: 20px;
 }
 
 // Menu Footer
