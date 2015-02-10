@@ -109,82 +109,125 @@
 // Gallery Layout
 // --------------
 
-.widget__gallery {
-    // Gallery List
-    .gallery-list {
-        &:hover li {
-            opacity: 0.3;
+.default-page {
+    .widget__gallery {
+        // Gallery List
+        .gallery-list {
+            &:hover li {
+                opacity: 0.3;
+            }
         }
-    }
-    // Gallery Item
-    .gallery-item {
-        display: inline-block;
-        margin-right: 2%;
-        position: relative;
-        width: 31%;
-        margin-bottom: 2%;
-        transform: scale(1);
-        .transition(all, 0.5s, ease-in-out);
-        vertical-align: top;
-        &:nth-child(3n) {
-            margin-right: 0;
-        }
-        @media @tablet {
-            width: 48%;
-            &:nth-child(2n) {
+        // Gallery Item
+        .gallery-item {
+            display: inline-block;
+            margin-right: 2%;
+            position: relative;
+            width: 31%;
+            margin-bottom: 2%;
+            transform: scale(1);
+            .transition(all, 0.5s, ease-in-out);
+            vertical-align: top;
+            &:nth-child(3n) {
                 margin-right: 0;
             }
-            &:nth-child(3n) {
-                margin-right: 2%;
+            @media @tablet {
+                width: 48%;
+                &:nth-child(2n) {
+                    margin-right: 0;
+                }
+                &:nth-child(3n) {
+                    margin-right: 2%;
+                }
+            }
+            @media @mobile {
+                margin-right: 0;
+                width: 100%;
+                margin-bottom: 4%;
+            }
+            &:hover {
+                opacity: 1!important;
+                transform: scale(1.05);
+                .image-link {
+                    background-blend-mode: multiply;
+                    opacity: 0.65;
+                    -webkit-filter: grayscale(100%);
+                }
+                figcaption {
+                    background-color: fade(@color-swatch4, 65%);
+                    display: flex;
+                    height: 100%;
+                    opacity: 1;
+                    -webkit-transform: scale(0.85);
+                      -ms-transform: scale(0.85);
+                          transform: scale(0.85);
+                    .transition(all, 0.5s, ease-in-out);
+                    visibility: visible;
+                }
             }
         }
-        @media @mobile {
-            margin-right: 0;
-            width: 100%;
-            margin-bottom: 4%;
-        }
-        &:hover {
-            opacity: 1!important;
-            transform: scale(1.1);
-        }
-        &:hover figcaption {
-            background-color: rgba(255,255,255, 0.5);
-            bottom: 8px;
-            height: auto;
-            margin: 0;
-            padding: 15px;
+
+        // Hide Figcaption
+        figcaption {
+            // Flex
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+
             position: absolute;
-            opacity: 1;
-            transform: scale(0.9);
-            visibility: visible;
+            display: block;
+            height: 0;
+            margin: 0;
+            padding: 0 15px;
+            opacity: 0;
+            text-align: center;
+            top: 0;
+            -webkit-transform: scale(0.85);
+                      -ms-transform: scale(0.85);
+                          transform: scale(0.85);
+            width: 100%;
+            visibility: hidden;
+            @media @mobile {
+                left: 0;
+            }
+            .image-title {
+                color: @color-swatch1;
+                text-transform: uppercase;
+                font-family: @font-swatch4-font-family;
+                letter-spacing: 1px;
+                font-size: 15px;
+                display: block;
+                padding: 6px 12px 5px;
+            }
+            .image-description {
+                color: darken(@color-swatch1, 15%);
+                font-size: 15px;
+                line-height: 23px;
+            }
         }
-    }
 
-    // Hide Figcaption
-    figcaption {
-        height: 0;
-        padding: 0;
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    // Use Background Image
-    .image-link {
-        display: block;
-        height: 280px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        @media @tablet {
-            height: 210px;
-        }
-        // Hide Inline Image
-        .image {
-            display: none;
+        // Use Background Image
+        .image-link {
+            display: block;
+            height: 280px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            @media @tablet {
+                height: 210px;
+            }
+            // Hide Inline Image
+            .image {
+                display: none;
+            }
         }
     }
 }
-
 
 // Gallery Images
 // --------------
@@ -229,6 +272,7 @@
 
 
 
+
 // -----------------------------
 // 7.  #Slideshow
 // -----------------------------
@@ -260,7 +304,7 @@
 // ------------------------
 
 .responsiveslideshow .caption {
-    background-color: fade(@color-swatch4, 20%);
+    background-color: fade(@color-swatch4, 65%);
     bottom: initial;
     position: absolute;
     margin: 0;
@@ -272,19 +316,25 @@
         font-size: bkscale(@font-swatch5, 0.9);
     }
     .image-description {
-        color: darken(@color-swatch1, 10%);
-        font-size: bkscale(@font-swatch5, 0.85);
+        color: darken(@color-swatch1, 20%);
+        font-size: bkscale(@font-swatch5, 0.8);
     }
 }
 
 // Slidehsow Controls
 .slide-navigation {
     background-color: @color-swatch4;
-    bottom: -15px;
+    bottom: 0;
     height: 65px;
     margin: 0;
     position: absolute;
-    width: 100%;
+    right: 0;
+    width: 225px;
+    @media @mobile {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
     .control-text {
         display: none;
     }
@@ -313,9 +363,9 @@
 
 // Pagination Controls
 .slide-pagination {
-    bottom: 2px;
+    bottom: 15px;
     position: absolute;
-    left: 25px;
+    left: 22px;
     @media @mobile {
         display: none;
     }

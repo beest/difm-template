@@ -172,7 +172,12 @@
 	}
 	// Date
 	.post-footer time {
-		float: right;
+		display: inline-block;
+		width: 24%;
+		@media @mobile {
+			display: block;
+			width: 100%;
+		}
 	}
 	// Blog Footer
 	.post-footer {
@@ -197,6 +202,12 @@
 	display: inline-block;
 	margin: 0 0 10px;
 	width: 75%;
+	text-align: right;
+	@media @mobile {
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
 	.post-category, .post-tags {
 		display: inline-block;
 		width: auto;
