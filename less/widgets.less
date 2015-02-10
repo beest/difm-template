@@ -112,8 +112,10 @@
 .widget__gallery {
     // Gallery List
     .gallery-list {
+        &:hover li {
+            opacity: 0.3;
+        }
     }
-
     // Gallery Item
     .gallery-item {
         display: inline-block;
@@ -121,6 +123,9 @@
         position: relative;
         width: 31%;
         margin-bottom: 2%;
+        transform: scale(1);
+        .transition(all, 0.5s, ease-in-out);
+        vertical-align: top;
         &:nth-child(3n) {
             margin-right: 0;
         }
@@ -138,6 +143,29 @@
             width: 100%;
             margin-bottom: 4%;
         }
+        &:hover {
+            opacity: 1!important;
+            transform: scale(1.1);
+        }
+        &:hover figcaption {
+            background-color: rgba(255,255,255, 0.5);
+            bottom: 8px;
+            height: auto;
+            margin: 0;
+            padding: 15px;
+            position: absolute;
+            opacity: 1;
+            transform: scale(0.9);
+            visibility: visible;
+        }
+    }
+
+    // Hide Figcaption
+    figcaption {
+        height: 0;
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
     }
 
     // Use Background Image
@@ -253,7 +281,7 @@
 .slide-navigation {
     background-color: @color-swatch4;
     bottom: -15px;
-    height: 70px;
+    height: 65px;
     margin: 0;
     position: absolute;
     width: 100%;
@@ -285,7 +313,7 @@
 
 // Pagination Controls
 .slide-pagination {
-    bottom: 6px;
+    bottom: 2px;
     position: absolute;
     left: 25px;
     @media @mobile {
@@ -293,9 +321,9 @@
     }
     button {
         background-color: @color-swatch5;
-        height: 18px;
+        height: 16px;
         margin-right: 2px;
-        width: 18px;
+        width: 16px;
         text-indent: -99999px;
     }
 }
@@ -394,6 +422,7 @@ button,
     .social-item {
         background: @font-swatch7-background-color;
         display: inline-block;
+        margin-bottom: 5px;
         margin-right: 10px;
         padding: 3px 8px;
         height: 35px;

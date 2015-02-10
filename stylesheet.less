@@ -196,6 +196,9 @@ textarea:focus,
 		position: relative;
 		width: 100%;
 	}
+	@media @mobile {
+		padding-top: 35px;
+	}
 	// Footer
 	.template-footer {
 		display: block;
@@ -209,13 +212,18 @@ textarea:focus,
 // Company Name
 // ------------
 
+// Center Company Name at Tablet & Below
+
+[data-widget-type="extendednavigation"] { 
+	@media @tablet {
+		text-align: center;
+	}
+}
+
 .companyname {
 	border: 4px solid @color-swatch4;
 	display: inline-block;
 	padding: 8px 14px;
-	@media @tablet {
-		text-align: center;
-	}
 }
 
 .company-link:hover {
@@ -278,7 +286,7 @@ textarea:focus,
 	margin: 4rem 0;
 	@media @tablet {
 		display: block;
-		margin: 2rem 0 1rem;
+		margin: 2rem 0 0;
 	}
 }
 
@@ -417,6 +425,7 @@ div[role="main"] {
 	}
 	@media @tablet {
 		display: block;
+		overflow-y: initial;
 		padding: 20px 0 0;
 		width: 100%;
 	}
@@ -427,6 +436,12 @@ div[role="main"] {
 // ---------------
 
 .home {
+	.gallery-list {
+		.clearfix;
+		&:hover li {
+            opacity: 1;
+        }
+	}
 	.gallery-item {
 		// Gallery List Items
 		float: left;
@@ -434,14 +449,26 @@ div[role="main"] {
 		margin-right: 0;
 		height: auto;
 		width: 33.33%;
+		margin-bottom: 25px;
+		transform: scale(1);
+		.transition(all, 0.5s, ease-in-out);
 		@media @tablet {
+			margin-right: 0!important;
 			width: 50%;
 		}
 		@media @mobile {
 			width: 100%;
 		}
-		&> {
-			.transition(all, 0.5s, ease-out);
+		&:hover {
+			transform: scale(1.05);
+			img {
+  				background-blend-mode: multiply;
+  				opacity: 0.25;
+				-webkit-filter: grayscale(100%);
+			}
+			.image-link {
+				background-color: @color-swatch4;
+			}
 		}
 		// Gallery Anchor Link
 		.image-link {
@@ -455,6 +482,7 @@ div[role="main"] {
 				margin-right: 0;
 			}
 			&:hover {
+				backround-color: @color-swatch4;
 				// Image Caption
 				.image-gallery__caption {
 					background-color: transparent;
@@ -462,7 +490,7 @@ div[role="main"] {
 					padding: 20px 20px 20px 0;
 					position: relative;
 					opacity: 1;
-					visibility: visible;
+					transform: scale(1.1);
 					span {
 						color: @font-swatch4-color;
 						font-size: bkscale(@font-swatch5-font-size, 0.9);
@@ -471,8 +499,21 @@ div[role="main"] {
 			}
 		}
 		//Image Caption 
-		.caption {
-			display: none;
+		figcaption {
+			background-color: transparent!important;
+			bottom: initial;
+			margin: 0 auto;
+			padding: 15px;
+			position: absolute;
+			left: -30px;
+			right: 0;
+			top: 0;
+			text-align: center;
+			transform: scale(0.85);
+			top: 32%;
+			span {
+				color: white;
+			}
 		}
 		// Gallery Inline Image
 		.image {

@@ -11,20 +11,27 @@
 	<div role="main" id="main">
 
 		<!-- GALLERY -->
-		{{widget('gallery', 'home-gallery', {'images':[
-			{'imageHeight':'550', 'imageWidth':'300', 'url':'http://placehold.it/350x300', 'title':'test title', 'description': 'test desc'},
-			{'imageHeight':'600', 'imageWidth':'300', 'url':'http://placehold.it/600x450', 'title':'test title', 'description': 'test desc'},
-			{'imageHeight':'350', 'imageWidth':'200', 'url':'http://placehold.it/200x350', 'title':'test title', 'description': 'test desc'},
-			{'imageHeight':'350', 'imageWidth':'400', 'url':'http://placehold.it/400x100', 'title':'test title', 'description': 'test desc'},
-			{'imageHeight':'550', 'imageWidth':'300', 'url':'http://placehold.it/350x300', 'title':'test title', 'description': 'test desc'},
-			{'imageHeight':'600', 'imageWidth':'300', 'url':'http://placehold.it/600x450', 'title':'test title', 'description': 'test desc'},
-			{'imageHeight':'350', 'imageWidth':'200', 'url':'http://placehold.it/200x350', 'title':'test title', 'description': 'test desc'},
-			{'imageHeight':'350', 'imageWidth':'400', 'url':'http://placehold.it/400x100', 'title':'test title', 'description': 'test desc'},
-			{'imageHeight':'350', 'imageWidth':'400', 'url':'http://placehold.it/400x100', 'title':'test title', 'description': 'test desc'}
+		{{widget('gallery', 'home-gallery', {
+		'showTitle': true,
+		'showDescription': false,
+		'images':[
+			{'url':asset('/images/gallery/3.jpg'),'title':'First image title'},
+			{'url':asset('/images/gallery/2.jpg')},
+			{'url':asset('/images/gallery/3.jpg')},
+			{'url':asset('/images/gallery/6.jpg'), 'title':'First image title'},
+			{'url':asset('/images/gallery/7.jpg')},
+			{'url':asset('/images/gallery/1.jpg')},
+			{'url':asset('/images/gallery/8.jpg'), 'title':'First image title'},
+			{'url':asset('/images/gallery/9.jpg')},
+			{'url':asset('/images/gallery/4.jpg'), 'title':'First image title'},
+			{'url':asset('/images/gallery/5.jpg')}
 		]})|raw}}
 
 	</div>
 	<!-- END MAIN SECTION -->
+
+	<!-- FOOTER -->
+	{% include "includes/footer.twig" %}
 
 </div>
 <!-- END CONTAINER -->

@@ -2,7 +2,18 @@
     "name": "Masonry",
     "thumbnail": "thumbnail.png",
     "widgetVersion": 2,
-    "pageTypes": ["home", "ecomproduct3"],
+    "pageTypes": ["home", "ecomproduct"],
+    "images":[
+        "images/gallery/1.jpg",
+        "images/gallery/2.jpg",
+        "images/gallery/3.jpg",
+        "images/gallery/4.jpg",
+        "images/gallery/5.jpg",
+        "images/gallery/6.jpg",
+        "images/gallery/7.jpg",
+        "images/gallery/8.jpg",
+        "images/gallery/9.jpg"
+    ],
     "colorSwatches":
     {
         "Swatch 1": {
@@ -16,7 +27,7 @@
         }
     },
     "fontSwatch": {
-       "title": "Futura and PT Serif",
+       "title": "Ek Mukta and PT Serif",
         "font1": {
             "font-family": "\"Ek Mukta\", Arial, sans-serif",
             "font-size": "36px",

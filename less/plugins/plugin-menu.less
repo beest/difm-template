@@ -9,25 +9,6 @@
 
 
 // -----------------------------
-// 1. Menu Navigation
-// -----------------------------
-
-.blogsearch {
-	margin-bottom: 40px;
-	.form-body {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;  
-	}
-	.form-group {
-		width: 88%;
-	}
-}
-
-
-
-// -----------------------------
 // 2. Menu Navigation
 // -----------------------------
 
@@ -44,7 +25,7 @@
 
 // Navigation Title
 .menu-item-name {
-	background: @font-swatch7-background-color;
+	background: lighten(@font-swatch7-background-color, 40%);
 	color: @font-swatch7-color;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
@@ -72,6 +53,12 @@
 	padding: 30px 0;
 }
 
+// Menu Section
+.menu-items {
+	border-bottom: 1px solid @color-swatch7;
+}
+
+// Single Menu Items
 
 .menu-item {
 	// Menu Item
@@ -141,7 +128,6 @@
 
 // Menu Subsection
 .menu-section {
-	border-bottom: 1px solid @color-swatch7;
 	.section-subtitle {
 		color: @font-swatch5-color;
 		font-family: @font-swatch5-font-family;
