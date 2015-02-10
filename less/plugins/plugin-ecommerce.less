@@ -211,7 +211,7 @@
         margin: 0 0 0 4%;
         max-height: 450px;
         position: relative;
-        overflow-y: hidden;
+        overflow: hidden;
         vertical-align: top;
         width: 15%;
         @media @tablet {
@@ -235,16 +235,20 @@
     }
     // Product Content
     .product-content {
+        max-width; 80%;
         margin: 0;
         @media @tablet {
             margin-left: 0;
             width: 100%;
         }
+        @media @mobile {
+            max-width: 100%;
+        }
     }
     // Product Title
     .product-title {
         font-size: bkscale(@font-swatch1-font-size, 0.9);
-        padding-bottom: 15px;
+        padding-bottom: 12px;
     }
     // Product Price
     .product-price {

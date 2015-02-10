@@ -164,11 +164,19 @@
 	.post-title {
 		margin: 50px 0 30px;
 		text-align: center;
+		@media @mobile {
+			font-size: bkscale(@font-swatch1-font-size, 0.8);
+			margin: 30px 0 10px;
+			text-align: left;
+		}
 	}
 	// Blog Content
 	.post-content {
 		margin: 0 auto;
 		max-width: 85%;
+		@media @mobile {
+			max-width: 100%;
+		}
 	}
 	// Date
 	.post-footer time {
@@ -176,6 +184,7 @@
 		width: 24%;
 		@media @mobile {
 			display: block;
+			margin-bottom: 20px;
 			width: 100%;
 		}
 	}
@@ -184,6 +193,10 @@
 		margin-top: 50px;
 		margin: 60px auto 40px;
 		max-width: 85%;
+		@media @mobile {
+			margin: 35px 0 15px;
+			width: 100%;
+		}
 	}
 }
 

@@ -169,6 +169,10 @@ textarea:focus,
 	}
 }
 
+.home-page, .default-page {
+	.clearfix;
+}
+
 
 
 // -----------------------------
@@ -417,6 +421,7 @@ div[role="main"] {
 	display: inline-block;
 	float: left;
 	overflow-y: auto;
+	overflows-x: none;
 	padding: 65px 0 0 350px;
 	width: 100%;
 	-webkit-overflow-scrolling: touch;
@@ -470,6 +475,7 @@ div[role="main"] {
 			}
 			.image-link {
 				background-color: @color-swatch4;
+				text-decoration: none;
 			}
 			figcaption {
 				display: flex;
