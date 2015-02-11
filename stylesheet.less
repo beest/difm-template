@@ -306,12 +306,14 @@ textarea:focus,
 .bk-extendednavigation {
 	.navigation-body {
 		@media @tablet {
+			display: none;
 			height: 0;
 			padding: 0;
 			opacity: 0;
 			visibility: hidden;
 			&.open {
-				height: auto;
+				display: block;
+				height: 100%;
 				padding-bottom: 5px;
 				position: relative;
 				opacity: 1;
