@@ -421,7 +421,7 @@ div[role="main"] {
 	display: inline-block;
 	float: left;
 	overflow-y: auto;
-	overflows-x: none;
+	overflow-x: none;
 	padding: 65px 0 0 350px;
 	width: 100%;
 	-webkit-overflow-scrolling: touch;
@@ -450,11 +450,9 @@ div[role="main"] {
 	.gallery-item {
 		// Gallery List Items
 		float: left;
-		margin-bottom: 25px;
-		margin-right: 0;
+		padding: 0 12px 24px;
 		height: auto;
 		width: 33.33%;
-		margin-bottom: 25px;
 		transform: scale(1);
 		-webkit-transform: scale(1);
 			      -ms-transform: scale(1);
@@ -492,9 +490,9 @@ div[role="main"] {
 		.image-link {
 			background-image: none!important;
 			height: auto;
-			margin-right: 25px;
+			/*margin-right: 25px;*/
 			@media @tablet {
-				margin-right: 15px;
+				/*margin-right: 15px;*/
 			}
 			@media @mobile {
 				margin-right: 0;
@@ -525,12 +523,12 @@ div[role="main"] {
 		position: absolute;
 		display: block;
 		height: 0;
-		left: -10px;
+		left: 0;
 		margin: 0;
 		padding: 0;
 		opacity: 0;
 		text-align: center;
-		top: 0;
+		top: -12px;
 		-webkit-transform: scale(0.85);
 			      -ms-transform: scale(0.85);
 			          transform: scale(0.85);
@@ -538,6 +536,9 @@ div[role="main"] {
 		visibility: hidden;
 		@media @mobile {
 			left: 0;
+		}
+		.caption-link:hover {
+			text-decoration: none;
 		}
 		.image-title {
 			color: white;
