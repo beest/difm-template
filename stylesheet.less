@@ -144,7 +144,6 @@ select,
 	color: lighten(@font-swatch5-color, 10%);
 	font-family: bkscale(@font-swatch5-font-family, 0.9);
 	font-size: bkscale(@font-swatch5-font-size, 0.88);
-	padding: 12px;
 	line-height: 0;
 	height: 48px;
 
@@ -309,20 +308,19 @@ textarea:focus,
 .bk-extendednavigation {
 	.navigation-body {
 		@media @tablet {
+			display: block;
 			height: 0;
 			padding: 0;
 			opacity: 0;
 			visibility: hidden;
 			&.open {
+				.clearfix;
 				height: 100%;
 				padding-bottom: 5px;
 				position: relative;
 				opacity: 1;
 				.transition(all, 0.5s, ease);
 				visibility: visible;
-				ul {
-					display: block;
-				}
 			}
 		}
 		.navigation-list {
