@@ -13,11 +13,17 @@
 
 .blogsearch {
 	margin-bottom: 30px;
+	@media @mobile {
+		margin-bottom: 15px;
+	}
 	.form-body {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: -webkit-flex;
 		display: flex;  
+		@media @mobile {
+			display: block;
+		}
 	}
 	.form-group {
 		width: 88%;
@@ -52,14 +58,10 @@
 		}
 		.post-image {
 			background-color: rgb(248,248,248);
-			height: 250px;
 			position: relative;
-		}
-		.blogpostlist__image {
-			bottom: 0;
-			position: absolute;
-			overflow: hidden;
-			max-height: 250px;
+			@media @mobile {
+				bacgkround-color: transparent;
+			}
 		}
 	}
 }
@@ -166,6 +168,7 @@
 		text-align: center;
 		@media @mobile {
 			font-size: bkscale(@font-swatch1-font-size, 0.8);
+			line-height: @font-swatch1-font-size, 0.85);
 			margin: 30px 0 10px;
 			text-align: left;
 		}
@@ -203,7 +206,7 @@
 		max-width: 85%;
 		@media @mobile {
 			margin: 35px 0 15px;
-			width: 100%;
+			max-width: 100%;
 		}
 	}
 }
@@ -212,6 +215,14 @@
 
 .sharing-links {
 	margin-top: 15px;
+	@media @mobile {
+		margin-top: 30px;
+	}
+	.network-item {
+		@media @mobile {
+			width: 100%;
+		}
+	}
 	button {
 		font-size: 14px;
 	}

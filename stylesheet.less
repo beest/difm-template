@@ -130,6 +130,11 @@ label {
 	text-transform: uppercase;
 }
 
+input, textarea {
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
 input.input, 
 .textarea, 
 select, 
@@ -305,16 +310,19 @@ textarea:focus,
 			padding: 0;
 			opacity: 0;
 			visibility: hidden;
+			&.open {
+				height: auto;
+				padding-bottom: 5px;
+				position: relative;
+				opacity: 1;
+				.transition(all, 0.5s, ease);
+				visibility: visible;
+			}
 		}
-	}
-	&.open .navigation-body {
-		@media @tablet {
-			height: auto;
-			padding-bottom: 5px;
-			position: relative;
-			opacity: 1;
-			.transition(all, 0.5s, ease);
-			visibility: visible;
+		.navigation-list {
+			@media @mobile {
+				margin-top: 12px;
+			}
 		}
 	}
 }
@@ -353,6 +361,37 @@ textarea:focus,
 		border-bottom: 0;
 		&:after {
 			border-bottom: 0;
+		}
+	}
+	// Folder Styles at Mobile
+	&.folder {
+		ul {
+			@media @tablet {
+				height: 0;
+				padding: 0;
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		&.open ul {
+			@media @tablet {
+				border-top: 1px solid darken(@color-swatch7, 10%);
+				height: auto;
+				padding: 0;
+				position: relative;
+				opacity: 1;
+				.transition(all, 0.5s, ease);
+				visibility: visible;
+				-webkit-transform: translateY(0);
+	      		transform: translateY(0);
+	      		.navigation-item--child .item-name {
+					padding: 12px 0;
+					&:before {
+						content: "\00a0";
+						position: relative;
+					}
+				}
+			}
 		}
 	}
 	// Dropdown Item

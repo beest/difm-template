@@ -204,6 +204,20 @@
         .image-link {
             height: 420px;
             line-height: 420px;
+            @media @mobile {
+                background-color: none;
+                height: initial;
+                line-height: initial;
+                max-height: 350px;
+            }
+        }
+        .image {
+             @media @mobile {
+                background-color: none;
+                height: initial;
+                line-height: initial;
+                max-height: 350px;
+            }
         }
     }
     // Image Gallery Thumbnails
