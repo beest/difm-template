@@ -308,26 +308,22 @@ textarea:focus,
 .bk-extendednavigation {
 	.navigation-body {
 		@media @tablet {
-			display: block;
 			height: 0;
 			padding: 0;
 			opacity: 0;
 			visibility: hidden;
 			&.open {
-				.clearfix;
 				height: 100%;
 				padding-bottom: 5px;
 				position: relative;
 				opacity: 1;
-				.transition(all, 0.5s, ease);
+				.transition(opacity, 0.5s, ease);
 				visibility: visible;
 			}
 		}
 		.navigation-list {
-			@media @tablet {
-				display: block;
+			@media @mobile {
 				margin-top: 12px;
-				z-index: initial;
 			}
 		}
 	}
@@ -386,7 +382,7 @@ textarea:focus,
 				padding: 0;
 				position: relative;
 				opacity: 1;
-				.transition(all, 0.5s, ease);
+				.transition(opacity, 0.5s, ease);
 				visibility: visible;
 				-webkit-transform: translateY(0);
 	      		transform: translateY(0);
