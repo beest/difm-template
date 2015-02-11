@@ -16,6 +16,11 @@
 .menusections-item {
 	display: inline-block;
 	margin-right: 20px;
+	@media @mobile {
+		display: block;
+		margin-right: 0;
+		text-align: center;
+	}
 }
 
 .menusections-list {
@@ -38,6 +43,10 @@
 		background: @font-swatch7-background-color-hover;
 		text-decoration: none;
 	}
+	@media @mobile {
+		display: block;
+		padding: 15px;
+	}
 }
 
 
@@ -45,6 +54,9 @@
 .menu__menu-section .section-header {
 	margin-bottom: 40px;
 	padding: 50px 0 30px;
+	@media @mobile {
+		padding: 10px 0 0;
+	}
 }
 
 // Menu Section Featured Header
@@ -147,6 +159,12 @@
 .item-image {
 	background-color: darken(@color-swatch1,5%);
 	margin-bottom: 20px;
+	.image-link {
+		@media @mobile {
+			height: auto;
+			line-height: 0;
+		}
+	}
 }
 
 // Menu Footer

@@ -8,13 +8,6 @@
 // 4. #BASKET SUMMARY
 
 
-// -------------------------------
-// 1. #Single Product
-// -------------------------------
-
-// No styles here...
-
-
 
 // -----------------------------
 // 2. Product List
@@ -39,12 +32,21 @@
     }
 }
 
+// Products Title
+.listing-title{
+    padding-bottom: 35px;
+}
+
 .product-filters {
     .form-group {
         &:nth-child(-n+4) {
             float: left;
             margin-right: 2%;
             width: 23.5%;
+            @media @mobile {
+                margin-right: 0;
+                width: 100%;
+            }
         }
         &:nth-child(4n) {
             margin-right: 0;
@@ -52,6 +54,9 @@
         &:nth-child(5n) {
             margin-top: 5px;
             width: 36%;
+            @media @mobile {
+                width: 100%;
+            }
         }
         select {
             height: 50px;
@@ -318,6 +323,9 @@
     .product__input, 
     .product-button {
         display: inline-block;
+        @media @mobile {
+            display: block;
+        }
     }
     // Add To Basket Button
     .product__input {
@@ -330,6 +338,11 @@
         height: 48px;
         left: 170px;
         position: absolute;
+        @media @mobile {
+            left: initial;
+            margin-top: 15px;
+            position: relative;
+        }
         // View Basket Button
         .product__button {
             background-color: fade(@font-swatch7-background-color, 50%);
