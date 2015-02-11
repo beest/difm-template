@@ -37,15 +37,18 @@
 <!-- END CONTAINER -->
 
 <!-- MASONRY GALLERY -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script>
 
-<script>
-	var container = document.querySelector('.gallery-list');
-		var msnry = new Masonry( container, {
-		// options
-		itemSelector: '.gallery-item'
-	});
-</script>
+{% endblock %}
 
+{% block scripts %}
+
+	<!-- MASONRY GALLERY -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script>
+	<script>
+		var container = document.querySelector('.gallery-list');
+			var msnry = new Masonry( container, {
+			itemSelector: '.gallery-item'
+		});
+	</script>
+	
 {% endblock %}
