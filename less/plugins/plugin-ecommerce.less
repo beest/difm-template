@@ -60,30 +60,46 @@
 
 // Product Filters
 .product-filters {
-    .form-group {
-        &:nth-child(-n+4) {
-            float: left;
-            margin-right: 2%;
-            width: 23.5%;
+    // Search Input
+    .fieldset--search {
+        margin-bottom: 5px;
+        .form-group {
+            min-width: 35.5%;
             @media @mobile {
+                min-width: 100%;
+            }
+        }
+    }
+    // Product Filters
+    .fieldset--filters {
+        .form-group {
+            .label--search {
+                display: none;
+            }
+            &:nth-child(-n+4) {
+                float: left;
+                margin-right: 2%;
+                width: 23.5%;
+                @media @mobile {
+                    margin-right: 0;
+                    width: 100%;
+                }
+            }
+            &:nth-child(4n) {
                 margin-right: 0;
+            }
+            &:nth-child(5n) {
+                margin-top: 5px;
+                width: 36%;
+                @media @mobile {
+                    width: 100%;
+                }
+            }
+            select {
+                height: 50px;
+                padding: 0 12px;
                 width: 100%;
             }
-        }
-        &:nth-child(4n) {
-            margin-right: 0;
-        }
-        &:nth-child(5n) {
-            margin-top: 5px;
-            width: 36%;
-            @media @mobile {
-                width: 100%;
-            }
-        }
-        select {
-            height: 50px;
-            padding: 0 12px;
-            width: 100%;
         }
     }
 }
