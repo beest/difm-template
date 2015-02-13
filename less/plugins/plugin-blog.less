@@ -2,14 +2,16 @@
 // Blog Post Styling
 // -------------------------------------
 
-//  1.   Blog Post List
-//  2.	 Blog Post
+//  1.   Blog Search
+//  2.	 Blog Post List
+//  3.   Blog Post
 
 
 
 // -----------------------------
 // 1. Blog Search
 // -----------------------------
+
 
 .blogsearch {
 	margin-bottom: 30px;
@@ -28,6 +30,7 @@
 	.form-group {
 		width: 88%;
 	}
+
 	// Search Label
 	label {
 		display: none;
@@ -66,7 +69,6 @@
 	}
 }
 
-
 // Blog Post Header Text
 .post-header {
 	margin-top: 25px;
@@ -77,16 +79,14 @@
 	}
 }
 
-
 // Blog Post Excerpt Text
-
 .post-excerpt p {
 	padding: 6px 0 16px;
 }
 
 // Read More Link
 .read-more {
-	background-color: @color-swatch2;
+	background-color: @contrast-color;
 	color: @font-swatch7-color;
 	display: inline-block;
 	font-family: @font-swatch7-font-family;
@@ -97,7 +97,7 @@
 	text-transform: uppercase;
 	.transition(all, .5s, ease-out);
 	&:hover {
-		background-color: lighten(@color-swatch2, 6%);
+		background-color: lighten(@contrast-color, 6%);
 		text-decoration: none;
 	}
 }
@@ -162,6 +162,7 @@
 		margin: 0 auto;
 		max-width: 750px;
 	}
+
 	// Blog Post Title
 	.post-title {
 		margin: 50px 0 30px;
@@ -173,6 +174,7 @@
 			text-align: left;
 		}
 	}
+
 	// Blog Content
 	.post-content {
 		margin: 0 auto;
@@ -181,6 +183,7 @@
 			max-width: 100%;
 		}
 	}
+
 	// Post Feature Image 
 	.post-image {
 		position: relative;
@@ -189,6 +192,7 @@
 			margin: 0 auto;
 		}
 	}
+
 	// Date
 	.post-footer time {
 		display: inline-block;
@@ -199,6 +203,7 @@
 			width: 100%;
 		}
 	}
+
 	// Blog Footer
 	.post-footer {
 		margin-top: 50px;
@@ -212,7 +217,6 @@
 }
 
 // Sharing Buttons 
-
 .sharing-links {
 	margin-top: 15px;
 	@media @mobile {
@@ -230,7 +234,6 @@
 		}
 	}
 }
-
 
 // Category & Tags
 .post-attributes {
@@ -250,9 +253,10 @@
 	.post-category {
 		margin-right: 20px;
 	}
+
 	// Label
 	p, a {
-		color: @color-swatch4;
+		color: @heading-color;
 		display: inline-block;
 		font-family: @font-swatch7-font-family;
 		font-size: bkscale(@font-swatch7-font-size, 0.9);
@@ -260,6 +264,7 @@
 		text-transform: uppercase;
 	}
 	.category-title, .tags-title {
+
 		// Double Colon For Label
 		&:after {
 			content: ":";
@@ -268,27 +273,29 @@
 			position: relative;
 		}
 	}
+
 	// Categorys
 	.category-link {
-		background-color: @color-swatch7;
-		color: @color-swatch5;
+		background-color: @spare-color;
+		color: @paragraph-color;
 		padding: 6px 8px;
 		.transition(all, .5s, ease-out);
 		&:hover {
-			background-color: darken(@color-swatch7, 8%);
-			color: @color-swatch4;
+			background-color: darken(@spare-color, 8%);
+			color: @heading-color;
 			text-decoration: none; 
 		}
 	}
+
 	// Tags
 	.tag-link {
-		background-color: @color-swatch7;
-		color: @color-swatch5;
+		background-color: @spare-color;
+		color: @paragraph-color;
 		padding: 6px 8px;
 		.transition(all, .5s, ease-out);
 		&:hover {
-			background-color: darken(@color-swatch7, 8%);
-			color: @color-swatch4;
+			background-color: darken(@spare-color, 8%);
+			color: @heading-color;
 			text-decoration: none; 
 		}
 	}

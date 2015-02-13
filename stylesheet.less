@@ -4,7 +4,11 @@
 
 //  1.   LESS Includes
 //  2.	 Mixins
-
+//	3.	 Global
+//  4. 	 Layout
+//  5. 	 Header
+//  6.	 Main
+//  7.	 Footer
 
 
 // -----------------------------
@@ -16,7 +20,6 @@
 // -------------------------
 
 @import "@{templateCommon}/bk-less-framework.less";
-//@import "@{templateCommon}/bk-less-framework/bk-less-precompiled.less";
 
 
 // Theme Includes
@@ -42,6 +45,7 @@
 
 
 @tablet: ~"only screen and (max-width: 800px)";
+
 
 .border-radius (@radius: 6px) {
     -webkit-border-radius: @radius;
@@ -72,11 +76,11 @@
 
 // Links
 .content-widget a {
-	border-bottom: 1px dotted @color-swatch2;
+	border-bottom: 1px dotted @contrast-color;
 	.transition(all, 0.25s, ease-out);
 	&:hover {
-		border-bottom: 1px dotted darken(@color-swatch2, 4%);
-		color: darken(@color-swatch2, 4%);
+		border-bottom: 1px dotted darken(@contrast-color, 4%);
+		color: darken(@contrast-color, 4%);
 		text-decoration: none;
 		.transition(all, 0.25s, ease-in);
 	}
@@ -85,15 +89,14 @@
 .emailaddress a {
 	.transition(.5s, all, ease-out);
 	&:hover {
-		color: darken(@color-swatch2, 4%);
+		color: darken(@contrast-color, 4%);
 		text-decoration: none;
 	}
 }
 
-
 // Blockquote
 blockquote {
-	border-left: 4px solid fade(@color-swatch2, 40%);
+	border-left: 4px solid fade(@contrast-color, 40%);
 	margin: 10px 0;
 	padding-left: 25px;
 	&:before {
@@ -101,12 +104,10 @@ blockquote {
 	}
 }
 
-
 // Pre + Code
 pre { font-size: 14px; }
 
 code { padding: 2px 5px; }
-
 
 // Buttons
 .button {
@@ -122,12 +123,11 @@ code { padding: 2px 5px; }
 	}
 }
 
-
 // Form Elements
 legend { display: none; }
 
 label {
-	color: @color-swatch4;
+	color: @heading-color;
 	font-family: @font-swatch7-font-family;
 	font-size: bkscale(@font-swatch7-font-size, 0.92);
 	font-weight: @font-swatch4-font-weight;
@@ -139,7 +139,7 @@ input.input,
 select, 
 .input--search.product-listing__input, 
 .product-filters .input--search  {
-	border: 3px solid @color-swatch7;
+	border: 3px solid @spare-color;
 	border-radius: 0;
 	color: lighten(@font-swatch5-color, 10%);
 	font-family: bkscale(@font-swatch5-font-family, 0.9);
@@ -148,9 +148,8 @@ select,
 	height: 48px;
 
 	//iOS Fix
-	-webkit-appearance: none;
+	//-webkit-appearance: none;
 }
-
 
 // Focus State
 input[type="search"]:focus, 
@@ -158,16 +157,18 @@ input[type="email"]:focus,
 input[type="password"]:focus, 
 textarea:focus, 
 .input--single-line:focus {
-	border-color: lighten(@color-swatch3, 50%);
+	border-color: lighten(@button-color, 50%);
 	.transition(.3s, all, ease-in)
 }
 
 
 
 // -----------------------------
-// 3. Layout
+// 4. Layout
 // -----------------------------
 
+
+// Container
 .template-container {
 	margin: 0 auto;
 	max-width: 1200px;
@@ -183,7 +184,7 @@ textarea:focus,
 
 
 // -----------------------------
-// 4. Header
+// 5. Header
 // -----------------------------
 
 
@@ -223,18 +224,18 @@ textarea:focus,
 // Company Name
 // ------------
 
+.companyname {
+	border: 4px solid @heading-color;
+	display: inline-block;
+	padding: 8px 14px;
+}
+
 // Center Company Name at Tablet & Below
 
 [data-widget-type="companyname"] { 
 	@media @tablet {
 		text-align: center;
 	}
-}
-
-.companyname {
-	border: 4px solid @color-swatch4;
-	display: inline-block;
-	padding: 8px 14px;
 }
 
 .company-link:hover {
@@ -303,7 +304,6 @@ textarea:focus,
 
 [data-widget-type="extendednavigation"] { width: 100%; }
 
-
 // Navigation List
 .bk-extendednavigation {
 	.navigation-body {
@@ -329,19 +329,18 @@ textarea:focus,
 	}
 }
 
-
 // List Item
 .navigation-item {
 	display: block;
 	&:after {
-		border-bottom: 1px solid @color-swatch7;
+		border-bottom: 1px solid @spare-color;
 		content: "";
 		display: block;
 		max-width: 100%;
 	}
 	&:hover {
 		.navigation-list--children {
-			border-top: 1px solid darken(@color-swatch7, 10%);
+			border-top: 1px solid darken(@spare-color, 10%);
 			height: auto;
 			padding: 0;
 			position: relative;
@@ -377,7 +376,7 @@ textarea:focus,
 		}
 		&.open ul {
 			@media @tablet {
-				border-top: 1px solid darken(@color-swatch7, 10%);
+				border-top: 1px solid darken(@spare-color, 10%);
 				height: auto;
 				padding: 0;
 				position: relative;
@@ -401,7 +400,7 @@ textarea:focus,
 		padding-left: 0;
 		.transition(all, 0.5s, ease-out);
 		&:hover {
-			color: darken(@color-swatch6, 40%);
+			color: darken(@nav-color, 40%);
 		}
 	}
 	// Dropdown Arrow
@@ -411,7 +410,7 @@ textarea:focus,
 		margin: 2px 8px;
 	}
 	&.selected .item-name {
-		color: darken(@color-swatch6, 40%);
+		color: darken(@nav-color, 40%);
 	}
 	// Dropdown Folder
 	.navigation-list--children {
@@ -426,7 +425,6 @@ textarea:focus,
 	}
 }
 
-
 // Toggle Button
 .navigation-toggle {
 	display: none;
@@ -437,8 +435,8 @@ textarea:focus,
 	}
 	@media @tablet {
 		background: transparent;
-		border-bottom: 1px solid @color-swatch7;
-		color: @color-swatch4;
+		border-bottom: 1px solid @spare-color;
+		color: @heading-color;
 		display: block;
 		font-weight: @font-swatch4-font-weight;
 		padding: 12px 0;
@@ -454,7 +452,7 @@ textarea:focus,
 
 
 // -----------------------------
-// 5. Main
+// 6. Main
 // -----------------------------
 
 
@@ -462,7 +460,7 @@ div[role="main"] {
 	display: inline-block;
 	float: left;
 	overflow-y: auto;
-	overflow-x: none;
+	overflow-x: hidden;
 	padding: 65px 0 0 350px;
 	width: 100%;
 	-webkit-overflow-scrolling: touch;
@@ -489,6 +487,7 @@ div[role="main"] {
         }
 	}
 	.gallery-item {
+
 		// Gallery List Items
 		float: left;
 		padding: 0 12px 24px;
@@ -514,7 +513,7 @@ div[role="main"] {
 				-webkit-filter: grayscale(100%);
 			}
 			.image-link {
-				background-color: @color-swatch4;
+				background-color: @heading-color;
 				text-decoration: none;
 			}
 			figcaption {
@@ -528,21 +527,19 @@ div[role="main"] {
 				visibility: visible;
 			}
 		}
+
 		// Gallery Anchor Link
 		.image-link {
 			background-image: none!important;
 			height: auto;
-			/*margin-right: 25px;*/
-			@media @tablet {
-				/*margin-right: 15px;*/
-			}
 			@media @mobile {
 				margin-right: 0;
 			}
 			&:hover {
-				backround-color: @color-swatch4;
+				background-color: @heading-color;
 			}
 		}
+
 		// Gallery Inline Image
 		.image {
 			display: block;
@@ -627,8 +624,9 @@ div[role="main"] {
 
 
 // -----------------------------
-// 4. Footer
+// 7. Footer
 // -----------------------------
+
 
 .template-footer {
 	display: none;

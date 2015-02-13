@@ -2,31 +2,50 @@
 // Table of Contents
 // -----------------------------
 
-// 1. #SINGLE PRODUCT
-// 2. #PRODUCT LIST
-// 3. #BASKET WIDGET
-// 4. #BASKET SUMMARY
+// 1.   Product List
+// 2.   Single Product
+// 3.   Product Summary
+// 4.   Basket Widget
+// 5.   Basket Summary
 
 
 
 // -----------------------------
-// 2. Product List
+// 1. Product List
 // -----------------------------
+
 
 // Product List
 .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;     
+    display: block;
+    .clearfix;   
 }
 
 // Product Item
 .product-item {
+    display: inline-block;
+    float: left;
     position: relative;
-    width: 32%;
     margin-bottom: 30px;
+    margin-right: 3.33%;
+    width: 31%;
+    vertical-align: top;
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+    // Display at 50% at tablet
+    @media @tablet {
+        width: 48%;
+        &:nth-child(2n) {
+            margin-right: 0!important;
+        }
+        &:nth-child(3n) {
+            margin-right: 3.33%;
+        }
+    }
     // Display 100% at mobile
     @media @mobile {
+        margin-right: 0!important;
         width: 100%;
     }
 }
@@ -39,6 +58,7 @@
     }
 }
 
+// Product Filters
 .product-filters {
     .form-group {
         &:nth-child(-n+4) {
@@ -127,57 +147,13 @@
 
 
 
-// -----------------------------
-// 3. Basket Widget
-// -----------------------------
-
-.basket__basket-item { position: relative; }
-.basket__item-image  { width: 200px; }
-
-// Display basket image and content inline
-.basket-item-image,
-.basket-item-details {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 20px;
-    @media @tablet {
-        width: 100%;
-        margin-right: 0;
-    }
-}
-
-// Item Remove Button
-.item-remove {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 9999;
-    // Remove icon spacing
-    &:before {
-        margin-right: 0;
-    }
-}
-// Hide button text
-.remove-text { 
-    display: none;
-}
-
-// Basket Image
-.basket__image {
-    max-height: 200px;
-    max-width: 200px;
-    @media @mobile {
-        max-height: inherit;
-    }
-}
-
-
-
 // -------------------------------
-// 4. Single Product
+// 2. Single Product
 // -------------------------------
+
 
 .product-article {
+
     // Inline Image & Content
     .product-images, 
     .product-content {
@@ -186,6 +162,7 @@
             float: initial;
         }
     }
+
     // Product Image Container
     .product-images {
         max-height: 450px;
@@ -193,6 +170,7 @@
         @media @tablet {
             max-height: none;
         }
+
         // Single Product Image
         .product-image {
             display: inline-block;
@@ -222,10 +200,12 @@
             }
         }
     }
+
     // Image Gallery Thumbnails
     .product-gallery {
         display: inline-block;
         margin: 0 0 0 4%;
+        padding-bottom: 15px;
         max-height: 450px;
         position: relative;
         overflow: hidden;
@@ -239,7 +219,7 @@
         }
         .gallery-item {
             height: 120px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             margin-right: 15px;
             width: 100%;
             @media @tablet {
@@ -253,6 +233,7 @@
             }
         }
     }
+
     // Product Content
     .product-content {
         max-width; 80%;
@@ -265,16 +246,19 @@
             max-width: 100%;
         }
     }
+
     // Product Title
     .product-title {
         font-size: bkscale(@font-swatch1-font-size, 0.9);
         padding-bottom: 12px;
     }
+
     // Product Price
     .product-price {
-        color: @color-swatch2;
+        color: @contrast-color;
         font-size: bkscale(@font-swatch3-font-size, 1.05);
     }
+
     // Product Availability
     .product-availability {
         display: inline-block;
@@ -295,16 +279,19 @@
             }
         }
     }
+
     // Product Description
     .product-description {
         color: lighten(@font-swatch5-color, 25%);
         font-size: bkscale(@font-swatch5-font-size, 0.9);
         padding-bottom: 15px;
     }
+
     // Product Form Group (Select & Buttons)
     .product-actions {
         margin: 15px 0 20px;
         position: relative;
+
         // Variations Wrapper
         .ecomproduct__fieldset {
             margin-bottom: 30px;
@@ -315,16 +302,19 @@
         .form-group {
             margin-bottom: 0;
         }
+
         // Variations Select
         .ecomproduct__select {
             padding: 0 10px;
             min-width: 25%;
         }
+
         // Add to Basket Button
         button.icon--add:before {
             content:"";
             display: none;
         }
+
         // View Basket Button
         .view-basket-wrap a {
             opacity: 0.5;
@@ -333,6 +323,7 @@
             }
         }
     }
+
     // Inline Cart Buttons
     .form-group, 
     .product__input, 
@@ -342,10 +333,12 @@
             display: block;
         }
     }
+
     // Add To Basket Button
     .product__input {
         margin-top: 20px;
     }
+
     // View Basket Button Wrapper
     .view-basket-wrap {
         bottom: 0;
@@ -358,6 +351,7 @@
             margin-top: 15px;
             position: relative;
         }
+
         // View Basket Button
         .product__button {
             background-color: fade(@font-swatch7-background-color, 50%);
@@ -369,6 +363,8 @@
     }
 }
 
+
+// Product Category & Tags
 .product-attributes {
     margin: 30px 0 20px;
     p, a {
@@ -384,18 +380,18 @@
     }
     .tag-link, 
     .category-link {
-        background-color: @color-swatch7;
-        color: @color-swatch5;
+        background-color: @spare-color;
+        color: @paragraph-color;
         padding: 2px 8px;
         .transition(all, .5s, ease-out);
         &:hover {
-            background-color: darken(@color-swatch7, 8%);
+            background-color: darken(@spare-color, 8%);
             text-decoration: none; 
         }
     }
     // Tags Label
     .product-attribute-title, .tags-title {
-        color: @color-swatch4;
+        color: @heading-color;
         padding-right: 5px;
     }
 }
@@ -403,8 +399,9 @@
 
 
 // -------------------------------
-// 5. Product Summary
+// 3. Product Summary
 // -------------------------------
+
 
 .widget__ecombasketsummary {
     .cell--header {
@@ -438,6 +435,7 @@
 }
 .ecom-view-more {
     background-color: white;
+    display: block;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -445,6 +443,70 @@
     width: 100%;
     @media @tablet {
         display: none;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+    &:before {
+        color: fade(@paragraph-color, 80%);
+        content: "\f107";
+        display; block;
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 26px;
+        position: relative;
+        text-align: center;
+        .transition(all, 0.5s, ease);
+    }
+    &:hover:before {
+        color: darken(@paragraph-color, 10%);
+    }
+}
+
+
+
+// -----------------------------
+// 4. Basket Widget
+// -----------------------------
+
+
+.basket__basket-item { position: relative; }
+.basket__item-image  { width: 200px; }
+
+// Display basket image and content inline
+.basket-item-image,
+.basket-item-details {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    @media @tablet {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+// Item Remove Button
+.item-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    // Remove icon spacing
+    &:before {
+        margin-right: 0;
+    }
+}
+
+// Hide button text
+.remove-text { 
+    display: none;
+}
+
+// Basket Image
+.basket__image {
+    max-height: 200px;
+    max-width: 200px;
+    @media @mobile {
+        max-height: inherit;
     }
 }
 
@@ -454,6 +516,7 @@
 // 6. Basket Summary
 // -------------------------------
 
+
 .widget__ecombasket {
     .basket-item-name {
         color: @font-swatch4-color;
@@ -461,7 +524,7 @@
         font-size: bkscale(@font-swatch3-font-size, 1.05);
     }
     .basket-item-price {
-        color: @color-swatch2;
+        color: @contrast-color;
         font-family: @font-swatch4-font-family;
         line-height: 24px;
     }
@@ -474,7 +537,7 @@
         text-transform: uppercase;
     }
     .item-remove {
-        background-color: @color-swatch5;
+        background-color: @paragraph-color;
         padding: 8px 10px;
     }
 }
