@@ -171,12 +171,15 @@
 .product-article {
 
     // Inline Image & Content
-    .product-images, 
-    .product-content {
+    .product-images {
         display: inline-block;
         @media @tablet {
             float: initial;
         }
+    }
+
+    ..product-content {
+        display: block;
     }
 
     // Product Image Container
@@ -221,7 +224,6 @@
     .product-gallery {
         display: inline-block;
         margin: 0 0 0 4%;
-        padding-bottom: 15px;
         max-height: 450px;
         position: relative;
         overflow: hidden;
@@ -452,6 +454,7 @@
 .ecom-view-more {
     background-color: white;
     display: block;
+    padding: 5px 0;
     position: absolute;
     bottom: 0;
     left: 0;
