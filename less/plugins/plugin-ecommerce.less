@@ -18,7 +18,7 @@
 // Product List
 .product-list {
     display: block;
-    .clearfix;   
+    .clearfix;
 }
 
 // Product Item
@@ -273,7 +273,7 @@
 
     // Product Price
     .product-price {
-        color: @contrast-color;
+        color: @color-swatch2;
         font-size: bkscale(@font-swatch3-font-size, 1.05);
     }
 
@@ -343,8 +343,8 @@
     }
 
     // Inline Cart Buttons
-    .form-group, 
-    .product__input, 
+    .form-group,
+    .product__input,
     .product-button {
         display: inline-block;
         @media @mobile {
@@ -391,25 +391,25 @@
         font-weight: @font-swatch4-font-weight;
         text-transform: uppercase;
     }
-    .product-category, 
+    .product-category,
     .product-tags {
         display: inline-block;
         margin: 0 20px 10px 0;
     }
-    .tag-link, 
+    .tag-link,
     .category-link {
-        background-color: @spare-color;
-        color: @paragraph-color;
+        background-color: @color-swatch7;
+        color: @color-swatch5;
         padding: 2px 8px;
         .transition(all, .5s, ease-out);
         &:hover {
-            background-color: darken(@spare-color, 8%);
-            text-decoration: none; 
+            background-color: darken(@color-swatch7, 8%);
+            text-decoration: none;
         }
     }
     // Tags Label
     .product-attribute-title, .tags-title {
-        color: @heading-color;
+        color: @color-swatch4;
         padding-right: 5px;
     }
 }
@@ -437,7 +437,7 @@
     .quantity-wrap {
         text-align: center;
     }
-    .button--quantity, 
+    .button--quantity,
     .quantity-field {
         margin: 0;
         vertical-align: top;
@@ -467,7 +467,7 @@
         text-decoration: none;
     }
     &:before {
-        color: fade(@paragraph-color, 80%);
+        color: fade(@color-swatch5, 80%);
         content: "\f107";
         display; block;
         font-family: 'FontAwesome', sans-serif;
@@ -477,7 +477,7 @@
         .transition(all, 0.5s, ease);
     }
     &:hover:before {
-        color: darken(@paragraph-color, 10%);
+        color: darken(@color-swatch5, 10%);
     }
 }
 
@@ -516,7 +516,7 @@
 }
 
 // Hide button text
-.remove-text { 
+.remove-text {
     display: none;
 }
 
@@ -543,7 +543,7 @@
         font-size: bkscale(@font-swatch3-font-size, 1.05);
     }
     .basket-item-price {
-        color: @contrast-color;
+        color: @color-swatch2;
         font-family: @font-swatch4-font-family;
         line-height: 24px;
     }
@@ -556,7 +556,7 @@
         text-transform: uppercase;
     }
     .item-remove {
-        background-color: @paragraph-color;
+        background-color: @color-swatch5;
         padding: 8px 10px;
     }
 }

@@ -25,7 +25,6 @@
 // Theme Includes
 // --------------
 
-@import "@{templateLocal}/less/colors.less"; 	  // Colors
 @import "@{templateLocal}/less/typography.less";  // Typography
 @import "@{templateLocal}/less/widgets.less";     // Widgets
 
@@ -82,11 +81,11 @@
 
 // Links
 .content-widget a {
-	border-bottom: 1px dotted @contrast-color;
+	border-bottom: 1px dotted @color-swatch2;
 	.transition(all 0.25s ease-out);
 	&:hover {
-		border-bottom: 1px dotted darken(@contrast-color, 4%);
-		color: darken(@contrast-color, 4%);
+		border-bottom: 1px dotted darken(@color-swatch2, 4%);
+		color: darken(@color-swatch2, 4%);
 		text-decoration: none;
 		.transition(all 0.25s ease-in);
 	}
@@ -95,14 +94,14 @@
 .emailaddress a {
 	.transition(.5s all ease-out);
 	&:hover {
-		color: darken(@contrast-color, 4%);
+		color: darken(@color-swatch2, 4%);
 		text-decoration: none;
 	}
 }
 
 // Blockquote
 blockquote {
-	border-left: 4px solid fade(@contrast-color, 40%);
+	border-left: 4px solid fade(@color-swatch2, 40%);
 	margin: 10px 0;
 	padding-left: 25px;
 	&:before {
@@ -133,7 +132,7 @@ code { padding: 2px 5px; }
 legend { display: none; }
 
 label {
-	color: @heading-color;
+	color: @color-swatch4;
 	font-family: @font-swatch7-font-family;
 	font-size: bkscale(@font-swatch7-font-size, 0.92);
 	font-weight: @font-swatch4-font-weight;
@@ -145,7 +144,7 @@ input.input,
 select,
 .input--search.product-listing__input,
 .product-filters .input--search  {
-	border: 3px solid @spare-color;
+	border: 3px solid @color-swatch7;
 	border-radius: 0;
 	color: lighten(@font-swatch5-color, 10%);
 	font-family: bkscale(@font-swatch5-font-family, 0.9);
@@ -163,7 +162,7 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 .input--single-line:focus {
-	border-color: lighten(@button-color, 50%);
+	border-color: lighten(@color-swatch3, 50%);
 	.transition(.3s all ease-in)
 }
 
@@ -235,7 +234,7 @@ textarea:focus,
 // ------------
 
 .companyname {
-	border: 4px solid @heading-color;
+	border: 4px solid @color-swatch4;
 	display: inline-block;
 	padding: 8px 14px;
 }
@@ -341,14 +340,14 @@ textarea:focus,
 .navigation-item {
 	display: block;
 	&:after {
-		border-bottom: 1px solid @spare-color;
+		border-bottom: 1px solid @color-swatch7;
 		content: "";
 		display: block;
 		max-width: 100%;
 	}
 	&:hover {
 		.navigation-list--children {
-			border-top: 1px solid darken(@spare-color, 10%);
+			border-top: 1px solid darken(@color-swatch7, 10%);
 			height: auto;
 			padding: 0;
 			position: relative;
@@ -384,7 +383,7 @@ textarea:focus,
 		}
 		&.open ul {
 			@media @tablet {
-				border-top: 1px solid darken(@spare-color, 10%);
+				border-top: 1px solid darken(@color-swatch7, 10%);
 				height: auto;
 				padding: 0;
 				position: relative;
@@ -408,7 +407,7 @@ textarea:focus,
 		padding-left: 0;
 		.transition(all 0.5s ease-out);
 		&:hover {
-			color: darken(@nav-color, 40%);
+			color: darken(@color-swatch6, 40%);
 		}
 	}
 	// Dropdown Arrow
@@ -418,7 +417,7 @@ textarea:focus,
 		margin: 2px 8px;
 	}
 	&.selected .item-name {
-		color: darken(@nav-color, 40%);
+		color: darken(@color-swatch6, 40%);
 	}
 	// Dropdown Folder
 	.navigation-list--children {
@@ -443,8 +442,8 @@ textarea:focus,
 	}
 	@media @tablet {
 		background: transparent;
-		border-bottom: 1px solid @spare-color;
-		color: @heading-color;
+		border-bottom: 1px solid @color-swatch7;
+		color: @color-swatch4;
 		display: block;
 		font-weight: @font-swatch4-font-weight;
 		padding: 12px 0;
@@ -519,7 +518,7 @@ div[role="main"] {
 				-webkit-filter: grayscale(100%);
 			}
 			.image-link {
-				background-color: @heading-color;
+				background-color: @color-swatch4;
 				text-decoration: none;
 			}
 			figcaption {
@@ -540,7 +539,7 @@ div[role="main"] {
 				margin-right: 0;
 			}
 			&:hover {
-				background-color: @heading-color;
+				background-color: @color-swatch4;
 			}
 		}
 

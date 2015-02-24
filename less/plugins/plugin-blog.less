@@ -22,7 +22,7 @@
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: -webkit-flex;
-		display: flex;  
+		display: flex;
 		@media @mobile {
 			display: block;
 		}
@@ -86,7 +86,7 @@
 
 // Read More Link
 .read-more {
-	background-color: @contrast-color;
+	background-color: @color-swatch2;
 	color: @font-swatch7-color;
 	display: inline-block;
 	font-family: @font-swatch7-font-family;
@@ -97,7 +97,7 @@
 	text-transform: uppercase;
 	.transition(all, .5s, ease-out);
 	&:hover {
-		background-color: lighten(@contrast-color, 6%);
+		background-color: lighten(@color-swatch2, 6%);
 		text-decoration: none;
 	}
 }
@@ -184,7 +184,7 @@
 		}
 	}
 
-	// Post Feature Image 
+	// Post Feature Image
 	.post-image {
 		position: relative;
 		.image {
@@ -216,7 +216,7 @@
 	}
 }
 
-// Sharing Buttons 
+// Sharing Buttons
 .sharing-links {
 	margin-top: 15px;
 	@media @mobile {
@@ -256,7 +256,7 @@
 
 	// Label
 	p, a {
-		color: @heading-color;
+		color: @color-swatch4;
 		display: inline-block;
 		font-family: @font-swatch7-font-family;
 		font-size: bkscale(@font-swatch7-font-size, 0.9);
@@ -276,27 +276,27 @@
 
 	// Categorys
 	.category-link {
-		background-color: @spare-color;
-		color: @paragraph-color;
+		background-color: @color-swatch7;
+		color: @color-swatch5;
 		padding: 6px 8px;
 		.transition(all, .5s, ease-out);
 		&:hover {
-			background-color: darken(@spare-color, 8%);
-			color: @heading-color;
-			text-decoration: none; 
+			background-color: darken(@color-swatch7, 8%);
+			color: @color-swatch4;
+			text-decoration: none;
 		}
 	}
 
 	// Tags
 	.tag-link {
-		background-color: @spare-color;
-		color: @paragraph-color;
+		background-color: @color-swatch7;
+		color: @color-swatch5;
 		padding: 6px 8px;
 		.transition(all, .5s, ease-out);
 		&:hover {
-			background-color: darken(@spare-color, 8%);
-			color: @heading-color;
-			text-decoration: none; 
+			background-color: darken(@color-swatch7, 8%);
+			color: @color-swatch4;
+			text-decoration: none;
 		}
 	}
 }
