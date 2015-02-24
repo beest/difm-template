@@ -53,11 +53,11 @@
     border-radius: @radius;
 }
 
-.transition (@prop: all, @time: 0.5s, @ease: ease) {
-	-webkit-transition: @prop @time @ease;  
-	-moz-transition:    @prop @time @ease;
-	-ms-transition:     @prop @time @ease; 
-	-o-transition:      @prop @time @ease;  
+.transition (@prop: all 0.5s ease) {
+	-webkit-transition: @prop;
+	-moz-transition:    @prop;
+	-ms-transition:     @prop;
+	-o-transition:      @prop;
 }
 
 .animation (@name, @duration: 2s, @ease: ease, @time: infinite, @direction: normal) {
@@ -67,6 +67,12 @@
 	animation: 		   @name @duration @ease @time @direction;
 }
 
+.transform ( @transform: scale(1) ) {
+	-webkit-transform: @transform;
+	-ms-transform: @transform;
+	transform: @transform;
+
+}
 
 
 // -----------------------------
@@ -77,17 +83,17 @@
 // Links
 .content-widget a {
 	border-bottom: 1px dotted @contrast-color;
-	.transition(all, 0.25s, ease-out);
+	.transition(all 0.25s ease-out);
 	&:hover {
 		border-bottom: 1px dotted darken(@contrast-color, 4%);
 		color: darken(@contrast-color, 4%);
 		text-decoration: none;
-		.transition(all, 0.25s, ease-in);
+		.transition(all 0.25s ease-in);
 	}
 }
 
 .emailaddress a {
-	.transition(.5s, all, ease-out);
+	.transition(.5s all ease-out);
 	&:hover {
 		color: darken(@contrast-color, 4%);
 		text-decoration: none;
@@ -113,7 +119,7 @@ code { padding: 2px 5px; }
 .button {
 	padding: 10px 20px 8px;
 	text-transform: uppercase;
-	.transition(all, 0.5s, ease-out);
+	.transition(all 0.5s ease-out);
 
 	//iOS Fixes
 	border-radius: 0;
@@ -134,10 +140,10 @@ label {
 	text-transform: uppercase;
 }
 
-input.input, 
-.textarea, 
-select, 
-.input--search.product-listing__input, 
+input.input,
+.textarea,
+select,
+.input--search.product-listing__input,
 .product-filters .input--search  {
 	border: 3px solid @spare-color;
 	border-radius: 0;
@@ -152,13 +158,13 @@ select,
 }
 
 // Focus State
-input[type="search"]:focus, 
-input[type="email"]:focus, 
-input[type="password"]:focus, 
-textarea:focus, 
+input[type="search"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
 .input--single-line:focus {
 	border-color: lighten(@button-color, 50%);
-	.transition(.3s, all, ease-in)
+	.transition(.3s all ease-in)
 }
 
 
@@ -218,6 +224,10 @@ textarea:focus,
 			display: none;
 		}
 	}
+	.logo,
+	.companyname {
+		margin-bottom: 10px;
+	}
 }
 
 
@@ -230,11 +240,9 @@ textarea:focus,
 	padding: 8px 14px;
 }
 
-// Center Company Name at Tablet & Below
-
-[data-widget-type="companyname"] { 
-	@media @tablet {
-		text-align: center;
+@media @mobile {
+	.company-link {
+		font-size: bkscale(@font-swatch10-font-size, 0.75);
 	}
 }
 
@@ -254,11 +262,11 @@ textarea:focus,
 	.icon {
 		color: gainsboro;
 		text-decoration: none!important;
-		&:before { 
-			font-size: 22px; 
+		&:before {
+			font-size: 22px;
 		}
 		&:hover {
-			.transition(all, .5s, ease-out);
+			.transition(all .5s ease-out);
 		}
 	}
 	.icon--twitter:hover { color: #4099FF; }
@@ -295,7 +303,6 @@ textarea:focus,
 	display: flex;
 	flex: 1 0 auto;
 
-	margin: 4rem 0;
 	@media @tablet {
 		display: block;
 		margin: 2rem 0 0;
@@ -317,11 +324,12 @@ textarea:focus,
 				padding-bottom: 5px;
 				position: relative;
 				opacity: 1;
-				.transition(opacity, 0.5s, ease);
+				.transition(opacity 0.5s ease);
 				visibility: visible;
 			}
 		}
 		.navigation-list {
+			margin-top: 0;
 			@media @mobile {
 				margin-top: 12px;
 			}
@@ -345,7 +353,7 @@ textarea:focus,
 			padding: 0;
 			position: relative;
 			opacity: 1;
-			.transition(opacity, 0.5s, ease);
+			.transition(opacity 0.5s ease);
 			-webkit-transform: translateY(0);
       		transform: translateY(0);
 			visibility: visible;
@@ -381,7 +389,7 @@ textarea:focus,
 				padding: 0;
 				position: relative;
 				opacity: 1;
-				.transition(opacity, 0.5s, ease);
+				.transition(opacity 0.5s ease);
 				visibility: visible;
 				-webkit-transform: translateY(0);
 	      		transform: translateY(0);
@@ -398,7 +406,7 @@ textarea:focus,
 	// Dropdown Item
 	.item-name {
 		padding-left: 0;
-		.transition(all, 0.5s, ease-out);
+		.transition(all 0.5s ease-out);
 		&:hover {
 			color: darken(@nav-color, 40%);
 		}
@@ -493,11 +501,6 @@ div[role="main"] {
 		padding: 0 12px 24px;
 		height: auto;
 		width: 33.33%;
-		transform: scale(1);
-		-webkit-transform: scale(1);
-			      -ms-transform: scale(1);
-			          transform: scale(1);
-		.transition(all, 0.5s, ease-in-out);
 		@media @tablet {
 			width: 50%;
 		}
@@ -505,8 +508,11 @@ div[role="main"] {
 			padding: 0 0 24px;
 			width: 100%;
 		}
+		img {
+			-webkit-filter: grayscale(0%);
+			.transition(all 0.5s ease-in-out);
+		}
 		&:hover {
-			transform: scale(1.05);
 			img {
   				background-blend-mode: multiply;
   				opacity: 0.25;
@@ -520,10 +526,8 @@ div[role="main"] {
 				display: flex;
 				height: 100%;
 				opacity: 1;
-				-webkit-transform: scale(0.85);
-			      -ms-transform: scale(0.85);
-			          transform: scale(0.85);
-				.transition(all, 0.5s, ease-in-out);
+				.transform(scale(0.85));
+				.transition(all 0.5s ease-in-out);
 				visibility: visible;
 			}
 		}
@@ -546,8 +550,15 @@ div[role="main"] {
 			max-width: 100%;
 		}
 	}
+	.gallery__figure {
+		.transform(scale(1));
+		.transition(all 0.5s ease-in-out);
+		&:hover {
+			.transform(scale(1.05));
+		}
+	}
 
-	// Image Caption 
+	// Image Caption
 	figcaption {
 		// Flex
 		display: flex;
