@@ -2,6 +2,7 @@
     "name": "Masonry",
     "thumbnail": "thumbnail.png",
     "widgetVersion": 2,
+    "templateType":"standard",
     "pageTypes": ["home", "ecomproduct"],
     "images":[
         "images/gallery/1.jpg",
@@ -20,6 +21,42 @@
             "color1":"#ffffff",
             "color2":"#ca9e05",
             "color3":"#2b2d30",
+            "color4":"#2b2d30",
+            "color5":"#7a7c80",
+            "color6":"#a8aaad",
+            "color7":"#f0f0f0"
+        },
+        "Swatch 2": {
+            "color1":"#ffffff",
+            "color2":"#ca3305",
+            "color3":"#2b2d30",
+            "color4":"#2b2d30",
+            "color5":"#7a7c80",
+            "color6":"#a8aaad",
+            "color7":"#f0f0f0"
+        },
+        "Swatch 3": {
+            "color1":"#ffffff",
+            "color2":"#7fa05f",
+            "color3":"#4f4f4f",
+            "color4":"#2b2d30",
+            "color5":"#7a7c80",
+            "color6":"#a8aaad",
+            "color7":"#f0f0f0"
+        },
+        "Swatch 4": {
+            "color1":"#ffffff",
+            "color2":"#c13e6c",
+            "color3":"#4f4f4f",
+            "color4":"#2b2d30",
+            "color5":"#7a7c80",
+            "color6":"#a8aaad",
+            "color7":"#f0f0f0"
+        },
+        "Swatch 5": {
+            "color1":"#ffffff",
+            "color2":"#3e6fc1",
+            "color3":"#4f4f4f",
             "color4":"#2b2d30",
             "color5":"#7a7c80",
             "color6":"#a8aaad",
