@@ -123,8 +123,9 @@
             "line-height": "inherit",
             "color": "@color-swatch1",
             "letter-spacing": "1px",
+            "color-hover": "@color-swatch1",
             "background-color": "@color-swatch3",
-            "background-color-hover": "lighten(@color-swatch3,20%)"
+            "background-color-hover": "lighten(@color-swatch3, 20%)"
         },
         "font8": {
             "font-family": "\"Ek Mukta\", Arial, sans-serif",
