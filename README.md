@@ -1,2 +1,2 @@
 # masonry
-Masonry - Basekit Standard Template
+Masonry - Basekit Standard Theme
