@@ -128,7 +128,7 @@
             width: 31%;
             margin-bottom: 2%;
             transform: scale(1);
-            .transition(all, 0.5s, ease-in-out);
+            .transition(all 0.5s ease-in-out);
             vertical-align: top;
             &:nth-child(3n) {
                 margin-right: 0;
@@ -166,7 +166,7 @@
                     -webkit-transform: scale(0.85);
                       -ms-transform: scale(0.85);
                           transform: scale(0.85);
-                    .transition(all, 0.5s, ease-in-out);
+                    .transition(all 0.5s ease-in-out);
                     visibility: visible;
                 }
             }
@@ -422,7 +422,7 @@ button,
 //  --------------
 
 .clicktocall a, .company-phone-number a {
-    .transition(.5s, all, ease-out);
+    .transition(.5s all ease-out);
     @media @mobile {
         color: @font-swatch7-color;
     }
@@ -488,7 +488,7 @@ button,
         height: 35px;
         width: 35px;
         text-align: center;
-        .transition(all, 0.5s, ease-out);
+        .transition(all 0.5s ease-out);
         &:hover {
             background-color: @font-swatch7-background-color-hover;
         }
