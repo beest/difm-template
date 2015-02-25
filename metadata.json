@@ -99,9 +99,9 @@
         },
         "font5": {
             "font-family": "\"PT Serif\", Georgia, serif",
-            "font-size": "18px",
+            "font-size": "15px",
             "font-weight": "inherit",
-            "line-height": "30px",
+            "line-height": "25px",
             "color": "@color-swatch5",
             "letter-spacing": "inherit"
         },

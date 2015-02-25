@@ -280,6 +280,29 @@ textarea:focus,
 	.icon--linkedin:hover { color: #03659A; }
 }
 
+// Twitter Feed
+// ------------
+
+.twitter {
+	.avatar {
+		float: left;
+		width: 15%;
+		margin-right: 0;
+		padding-right: 5%;
+	}
+	.tweet-wrap {
+		float: left;
+		width: 85%;
+	}
+	.tweet-item {
+		.clearfix;
+	}
+	.tweet-metadata {
+		a {
+
+		}
+	}
+}
 
 
 // Copyright
@@ -482,6 +505,25 @@ div[role="main"] {
 		padding: 20px 0 0;
 		width: 100%;
 	}
+}
+
+h1 {
+	@media @mobile {
+		font-size: bkscale(@font-swatch1-font-size, 0.75);
+	}
+}
+
+h2 {
+	@media @mobile {
+		font-size: bkscale(@font-swatch2-font-size, 0.75);
+	}
+}
+
+// Image Widget
+// ------------
+
+.image-description {
+	font-size: bkscale(@font-swatch5-font-size, 0.85);
 }
 
 
