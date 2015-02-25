@@ -1,9 +1,11 @@
 <header class="template-header">
-	{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
-	{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-	<nav class="template-nav">
-		{{widget('extendednavigation', 'header-nav', {"align":"left"})|raw}}
-	</nav>
+	<div class="header-main">
+		{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
+		{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+		<nav class="template-nav">
+			{{widget('extendednavigation', 'header-nav', {"align":"left"})|raw}}
+		</nav>
+	</div>
 	<footer class="template-footer">
 		<div class="footer-info">
 			{{widget('profile', 'header-social', { 'profileType':'socialicons'})|raw}}

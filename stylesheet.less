@@ -198,11 +198,11 @@ textarea:focus,
 	flex: 1;
 	flex-direction: column;
 	width: 295px;
-	min-height: 98vh;
-
-	float: left;
+	height: 100vh;
 	padding-top: 65px;
 	position: fixed;
+	overflow-x: hidden;
+	overflow-y: auto;
 	@media only screen and (max-width: 1024px) {
 		width: 250px;
 	}
@@ -211,6 +211,8 @@ textarea:focus,
 		min-height: initial;
 		position: relative;
 		width: 100%;
+		height: auto;
+		overflow: visible;
 	}
 	@media @mobile {
 		padding-top: 35px;
@@ -228,6 +230,9 @@ textarea:focus,
 	}
 }
 
+.header-main {
+	flex: 1 0 auto;
+}
 
 // Company Name
 // ------------
@@ -298,9 +303,6 @@ textarea:focus,
 
 .template-nav {
 	// Flex
-	display: flex;
-	flex: 1 0 auto;
-
 	@media @tablet {
 		display: block;
 		margin: 2rem 0 0;
@@ -338,6 +340,7 @@ textarea:focus,
 // List Item
 .navigation-item {
 	display: block;
+	white-space: normal;
 	&:after {
 		border-bottom: 1px solid @color-swatch7;
 		content: "";
@@ -415,7 +418,7 @@ textarea:focus,
 		border-top-color: @font-swatch6-color;
 		margin: 2px 8px;
 	}
-	&.selected .item-name {
+	&.selected > .item-name {
 		color: darken(@color-swatch6, 40%);
 	}
 	// Dropdown Folder
