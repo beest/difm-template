@@ -120,7 +120,7 @@
         }
     }
     .product-item-price {
-        color: @color-swatch2;
+        color: @color-swatch5;
         font-family: @font-swatch4-font-family;
         font-size: @font-swatch3-font-size;
         font-weight: @font-swatch4-font-weight;
@@ -138,6 +138,9 @@
         &:hover {
             background-color: @font-swatch7-background-color;
         }
+    }
+    .current .button {
+        background-color: @font-swatch7-background-color;
     }
     // Previous Button Icon
     .button--previous {
@@ -237,16 +240,18 @@
         }
         .gallery-item {
             height: 120px;
+            line-height: 120px;
+            font-size: 0;
             margin-bottom: 20px;
             margin-right: 15px;
             width: 100%;
             @media @tablet {
-                line-height: 80px;
+                line-height: 70px;
                 margin-bottom: 15px;
                 height: 70px;
                 width: 70px;
             }
-            &:nth-child(3n) {
+            &:last-of-type {
                 margin-right: 0;
             }
         }
@@ -317,6 +322,13 @@
                 display: block;
             }
         }
+        .form {
+            display: inline-block;
+            width: 50%;
+            @media @mobile {
+                width: 100%;
+            }
+        }
         .form-group {
             margin-bottom: 0;
         }
@@ -324,7 +336,6 @@
         // Variations Select
         .ecomproduct__select {
             padding: 0 10px;
-            min-width: 25%;
         }
 
         // Add to Basket Button
@@ -359,11 +370,7 @@
 
     // View Basket Button Wrapper
     .view-basket-wrap {
-        bottom: 0;
         display: inline-block;
-        height: 48px;
-        left: 170px;
-        position: absolute;
         @media @mobile {
             left: initial;
             margin-top: 15px;
@@ -413,7 +420,6 @@
         padding-right: 5px;
     }
 }
-
 
 
 // -------------------------------
