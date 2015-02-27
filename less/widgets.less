@@ -129,7 +129,7 @@
                 margin-right: 0;
             }
             // Display at 50% at tablet
-            @media @tablet {
+            @media @tablet800px {
                 width: 48%;
                 &:nth-child(2n) {
                     margin-right: 0!important;
@@ -431,6 +431,10 @@ button,
     }
 }
 
+.phone-number-link {
+	text-rendering: auto;
+}
+
 
 //  8.5  #PAYPAL
 //  --------------
@@ -484,6 +488,7 @@ button,
         height: 35px;
         width: 35px;
         text-align: center;
+		line-height: 33px;
         .transition(all 0.5s ease-out);
         &:hover {
             background-color: @font-swatch7-background-color-hover;

@@ -37,13 +37,19 @@
 	    clear: left;
     }
     // Display at 50% at tablet
-    @media @tablet {
+    @media @tablet800px {
         width: 48%;
         &:nth-child(2n) {
             margin-right: 0!important;
         }
         &:nth-child(3n) {
             margin-right: 3.33%;
+        }
+        &:nth-child(2n) {
+            clear: right;
+        }
+        &:nth-child(4n) {
+            clear: none;
         }
     }
     // Display 100% at mobile
@@ -182,7 +188,7 @@
     // Inline Image & Content
     .product-images {
         display: inline-block;
-        @media @tablet {
+        @media @tablet800px {
             float: initial;
         }
     }
@@ -195,7 +201,7 @@
     .product-images {
         max-height: 450px;
         width: 100%;
-        @media @tablet {
+        @media @tablet800px {
             max-height: none;
         }
 
@@ -204,7 +210,7 @@
             display: inline-block;
             margin-bottom: 25px;
             width: 80%;
-            @media @tablet {
+            @media @tablet800px {
                 display: block;
                 width: 100%;
             }
@@ -238,7 +244,7 @@
         overflow: hidden;
         vertical-align: top;
         width: 15%;
-        @media @tablet {
+        @media @tablet800px {
             display: block;
             margin: 10px 0;
             overflow: visible;
@@ -251,7 +257,7 @@
             margin-bottom: 20px;
             margin-right: 15px;
             width: 100%;
-            @media @tablet {
+            @media @tablet800px {
                 line-height: 70px;
                 margin-bottom: 15px;
                 height: 70px;
@@ -267,7 +273,7 @@
     .product-content {
         max-width: 80%;
         margin: 0;
-        @media @tablet {
+        @media @tablet800px {
             margin-left: 0;
             width: 100%;
         }
@@ -477,7 +483,7 @@
     left: 0;
     text-align: center;
     width: 100%;
-    @media @tablet {
+    @media @tablet800px {
         display: none;
     }
     &:hover {
@@ -514,7 +520,7 @@
     display: inline-block;
     vertical-align: top;
     margin-right: 20px;
-    @media @tablet {
+    @media @tablet800px {
         width: 100%;
         margin-right: 0;
     }

@@ -42,7 +42,7 @@
 // -----------------------------
 
 
-@tablet: ~"only screen and (max-width: 800px)";
+@tablet800px: ~"only screen and (max-width: 800px)";
 
 
 .border-radius (@radius: 6px) {
@@ -235,7 +235,7 @@ select {
     @media only screen and (max-width: 1024px) {
         width: 180px;
     }
-    @media @tablet {
+    @media @tablet800px {
         display: block;
         min-height: initial;
         position: relative;
@@ -249,7 +249,7 @@ select {
     // Footer
     .template-footer {
         display: block;
-        @media @tablet {
+        @media @tablet800px {
             display: none;
         }
     }
@@ -287,7 +287,7 @@ select {
 // -------
 
 .widget__profile .socialicons {
-    @media @tablet {
+    @media @tablet800px {
         display: none;
     }
     .social-name { display: none; }
@@ -345,7 +345,7 @@ select {
 // ---------
 
 .companycopyright {
-    @media @tablet {
+    @media @tablet800px {
         display: none;
     }
     .copyright {
@@ -362,7 +362,7 @@ select {
 
 .template-nav {
     // Flex
-    @media @tablet {
+    @media @tablet800px {
         display: block;
         margin: 2rem 0 0;
     }
@@ -373,7 +373,7 @@ select {
 // Navigation List
 .bk-extendednavigation {
     .navigation-body {
-        @media @tablet {
+        @media @tablet800px {
             height: 0;
             padding: 0;
             opacity: 0;
@@ -435,7 +435,7 @@ select {
     // Folder Styles at Mobile
     &.folder {
         ul {
-            @media @tablet {
+            @media @tablet800px {
                 height: 0;
                 padding: 0;
                 opacity: 0;
@@ -443,7 +443,7 @@ select {
             }
         }
         &.open ul {
-            @media @tablet {
+            @media @tablet800px {
                 border-top: 1px solid darken(@color-swatch7, 10%);
                 height: auto;
                 padding: 0;
@@ -501,7 +501,7 @@ select {
         position: absolute;
         right: 0;
     }
-    @media @tablet {
+    @media @tablet800px {
         background: transparent;
         border-bottom: 1px solid @color-swatch7;
         color: @color-swatch4;
@@ -533,7 +533,7 @@ div[role="main"] {
     @media only screen and (max-width: 1024px) {
         padding-left: 200px;
     }
-    @media @tablet {
+    @media @tablet800px {
         display: block;
         overflow-y: initial;
         padding: 20px 0 0;
@@ -578,7 +578,7 @@ h2 {
         padding: 0 12px 24px;
         height: auto;
         width: 33.33%;
-        @media @tablet {
+        @media @tablet800px {
             width: 50%;
         }
         @media @mobile {
@@ -718,7 +718,7 @@ h2 {
 
 .template-footer {
     display: none;
-    @media @tablet {
+    @media @tablet800px {
         display: block;
         float: left;
         margin: 30px 0;
