@@ -2,6 +2,11 @@
     "name": "Masonry",
     "thumbnail": "thumbnail.png",
     "widgetVersion": 2,
+    "tags": {
+        "en": ["photography", "design", "portfolio", "gallery", "camera", "images", "technology", "creative", "media"],
+        "es": ["fotografía", "diseño", "portafolio", "galería", "cámara", "imágenes", "tecnología", "creativo", "comunicación"],
+        "br": ["fotografia", "design", "portfolio", "galeria", "câmara", "imagens", "tecnologia", "criativo", "mídia"]
+    },
     "templateType":"standard",
     "pageTypes": ["home", "ecomproduct"],
     "images":[
