@@ -249,6 +249,7 @@ select {
     // Footer
     .template-footer {
         display: block;
+        margin-bottom: 25px;
         @media @tablet800px {
             display: none;
         }
@@ -351,8 +352,8 @@ select {
     .copyright {
         color: lighten(@font-swatch5-color, 30%);
         font-family: @font-swatch4-font-family;
-        font-size: bkscale(@font-swatch5-font-size, 0.9);
-        margin-top: 10px;
+        font-size: bkscale(@font-swatch5-font-size, 0.95);
+        margin-top: 12px;
     }
 }
 
@@ -361,10 +362,11 @@ select {
 // ----------
 
 .template-nav {
+    margin-top: 30px;
     // Flex
     @media @tablet800px {
         display: block;
-        margin: 2rem 0 0;
+        margin: 0.5rem 0 1rem;
     }
 }
 
@@ -419,11 +421,7 @@ select {
             visibility: visible;
         }
         .navigation-item--child .item-name {
-            padding: 12px 0;
-            &:before {
-                content: "\00a0";
-                position: relative;
-            }
+            padding: 12px 0 12px 5px;
         }
     }
     &:last-child {
@@ -543,13 +541,13 @@ div[role="main"] {
 
 h1 {
     @media @mobile {
-        font-size: bkscale(@font-swatch1-font-size, 0.75);
+        font-size: bkscale(@font-swatch1-font-size, 0.85);
     }
 }
 
 h2 {
     @media @mobile {
-        font-size: bkscale(@font-swatch2-font-size, 0.75);
+        font-size: bkscale(@font-swatch2-font-size, 0.85);
     }
 }
 
