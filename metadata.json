@@ -104,9 +104,9 @@
         },
         "font5": {
             "font-family": "\"PT Serif\", Georgia, serif",
-            "font-size": "15px",
+            "font-size": "17px",
             "font-weight": "inherit",
-            "line-height": "25px",
+            "line-height": "30px",
             "color": "@color-swatch5",
             "letter-spacing": "inherit"
         },
@@ -154,7 +154,7 @@
             "font-weight": "700",
             "line-height": "inherit",
             "color": "@color-swatch4",
-            "letter-spacing": "2px"
+            "letter-spacing": "1px"
         }
     }
 }

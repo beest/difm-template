@@ -115,6 +115,9 @@
         // Gallery List
         .gallery-list {
             .clearfix;
+            &:hover li {
+                opacity: 0.3;
+            }
         }
         // Gallery Item
         .gallery-item {
@@ -152,8 +155,8 @@
                 opacity: 1!important;
                 .image-link {
                     background-blend-mode: multiply;
-                    opacity: 0.65;
-                    -webkit-filter: grayscale(100%);
+                    opacity: 0.85;
+                    -webkit-filter: grayscale(25%);
                     text-decoration: none;
                 }
                 figcaption {
@@ -383,7 +386,7 @@
     }
     button {
         background-color: lighten(@color-swatch5, 10%);
-        border: 1px solid darken(@color-swatch5, 5%);
+        
         height: 16px;
         margin-right: 2px;
         width: 16px;
@@ -439,6 +442,9 @@ button,
 
 .phone-number-link {
 	text-rendering: initial;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 
@@ -532,6 +538,11 @@ button,
         }
     }
     // Twitter handle
+    .account-link {
+        display: block;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
     .account-name {
         font-family: @font-swatch5-font-family;
         font-size: bkscale(@font-swatch9-font-size, 0.9);

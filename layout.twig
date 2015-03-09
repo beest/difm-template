@@ -35,13 +35,6 @@
 	<!-- jQuery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
-	<!-- Masonry -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script>
-
-	<!-- imagesLoaded -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
-
-
     <!-- Fast Click -->
     <script src="{{ asset('js/fastclick.js')}}"></script>
 
@@ -62,16 +55,10 @@
 	  			$( this ).toggleClass( "open" );
 			});
 		});
-
-		// MASONRY GALLERY
-		var container = document.querySelector('.gallery-list');
-
-		imagesLoaded( container, function() {
-			var msnry = new Masonry( container, {
-				itemSelector: '.gallery-item'
-			});
-		});
 	</script>
+
+	{% block scripts %}
+	{% endblock %}
 
 </body>
 </html>
