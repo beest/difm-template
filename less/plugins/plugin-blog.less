@@ -62,10 +62,17 @@
 		&:nth-child(2n) {
 			margin-right: 0;
 		}
-		
+
 		.post-image {
 			background-color: transparent;
 			position: relative;
+			max-height: 250px;
+			@media @tablet800px {
+				max-height: 400px;
+			}
+			@media @tablet800px {
+				max-height: 300px;
+			}
 		}
 		.image-link {
 			text-align: center;
@@ -73,7 +80,14 @@
 		.image {
 			display: inline-block;
 			line-height: 0;
+			max-hewight: 250px;
 			vertical-align: middle;
+			@media @tablet800px {
+				max-height: 400px;
+			}
+			@media @mobile {
+				max-height: 300px;
+			}
 		}
 	}
 }
