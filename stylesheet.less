@@ -318,6 +318,7 @@ select {
 .twitter {
     .avatar {
         float: left;
+        max-width: 98px;
         width: 15%;
         margin-right: 0;
         padding-right: 5%;
@@ -328,11 +329,6 @@ select {
     }
     .tweet-item {
         .clearfix;
-    }
-    .tweet-metadata {
-        a {
-
-        }
     }
 }
 
@@ -352,9 +348,9 @@ select {
         display: none;
     }
     .copyright {
-        color: lighten(@font-swatch5-color, 30%);
+        color: lighten(@font-swatch5-color, 20%);
         font-family: @font-swatch4-font-family;
-        font-size: bkscale(@font-swatch5-font-size, 0.95);
+        font-size: bkscale(@font-swatch5-font-size, 0.97);
         margin-top: 12px;
     }
 }
@@ -364,7 +360,7 @@ select {
 // ----------
 
 .template-nav {
-    margin-top: 30px;
+    margin-top: 50px;
     // Flex
     @media @tablet800px {
         display: block;
@@ -423,7 +419,7 @@ select {
             visibility: visible;
         }
         .navigation-item--child .item-name {
-            padding: 12px 0 12px 5px;
+            padding: 12px 0 12px 12px;
         }
     }
     &:last-child {

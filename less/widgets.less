@@ -26,6 +26,7 @@
 
 // 13.   Divider (Keyline)
 // 14.   Profile
+// 15.   Map
 
 
 // -----------------------------
@@ -115,6 +116,7 @@
         // Gallery List
         .gallery-list {
             .clearfix;
+            padding-top; 10px;
             &:hover li {
                 opacity: 0.3;
             }
@@ -347,16 +349,15 @@
 
 // Slidehsow Controls
 .slide-navigation {
-    background-color: @color-swatch4;
-    bottom: 0;
+    background-color: fade(@color-swatch4, 5%);
     margin: 0;
-    position: absolute;
-    right: 0;
     font-size: 0;
+    text-align: right;
     .control-text {
         display: none;
     }
     button {
+        background-color: @color-swatch4;
 	    padding: 14px 20px 15px;
 		min-width: 56px;
         &.previous-button {
@@ -385,13 +386,20 @@
         display: none;
     }
     button {
-        background-color: lighten(@color-swatch5, 10%);
-        
+        background-color: lighten(@color-swatch5, 25%);
         height: 16px;
         margin-right: 2px;
         width: 16px;
         text-indent: -99999px;
+        &:hover {
+            background-color: @color-swatch4;
+        }
     }
+}
+
+// Selected State of Pagination
+.pagination-item.selected button {
+    background-color: lighten(@color-swatch2, 10%);
 }
 
 
@@ -588,4 +596,15 @@ hr.rule {
 
 .address-line {
     padding-bottom: 2px;
+}
+
+
+
+// -----------------------------
+// 14. Map
+// -----------------------------
+
+
+.bk-map {
+    margin-bottom: 15px;
 }
