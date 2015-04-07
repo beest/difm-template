@@ -33,7 +33,7 @@
     &:nth-child(3n) {
         margin-right: 0;
     }
-    &:nth-child(4n) {
+    &:nth-child(3n+1) {
         clear: left;
     }
     // Display at 50% at tablet
@@ -369,9 +369,9 @@
 
         // View Basket Button
         .view-basket-wrap a {
-            opacity: 0.5;
+            background-color: fade(@color-swatch2, 75%);
             &:hover {
-                opacity: 1;
+                background-color: fade(@color-swatch2, 65%);
             }
         }
     }
@@ -469,14 +469,14 @@
     .quantity-wrap {
         text-align: center;
     }
-    .button--quantity,
-    .quantity-field {
+    .button--quantity {
         line-height: 0;
         margin: 0;
         vertical-align: top;
     }
     .quantity-field {
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 20px;
     }
     .button--submit {
         border: 0;

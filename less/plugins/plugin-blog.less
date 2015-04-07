@@ -28,15 +28,24 @@
 		}
 	}
 	.form-group {
+		margin-bottom: 0;
+		position: relative;
 		width: 88%;
 		@media @mobile {
 			width: 100%;
 		}
 	}
 
-	// Search Label
-	label {
-		display: none;
+	button {
+		bottom: 0;
+		margin-left: 12px;
+		position: absolute;
+
+		@media @mobile {
+			margin-left: 0;
+			margin-top: 10px;
+			position: relative;
+		}
 	}
 }
 
@@ -74,13 +83,10 @@
 				max-height: 300px;
 			}
 		}
-		.image-link {
-			text-align: center;
-		}
 		.image {
 			display: inline-block;
 			line-height: 0;
-			max-hewight: 250px;
+			max-height: 250px;
 			vertical-align: middle;
 			@media @tablet800px {
 				max-height: 400px;
