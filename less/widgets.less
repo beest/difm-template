@@ -471,7 +471,21 @@ button,
 
 // Global form styles are set in 'less > theme.less' (4. #Forms)
 
-.contact-form {
+.contactform {
+    legend {
+        color: @color-swatch4;
+        display: block;
+        font-family: @font-swatch7-font-family;
+        font-size: bkscale(@font-swatch7-font-size, 0.92);
+        font-weight: @font-swatch4-font-weight;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+    }
+    .label--email {
+        display: none;
+        height: 0;
+        visibility: none;
+    }
 }
 
 
@@ -482,7 +496,21 @@ button,
 
 // Global form styles are set in 'less > theme.less' (4. #Forms)
 
-.signup-form {
+.signupform {
+    legend {
+        color: @color-swatch4;
+        display: block;
+        font-family: @font-swatch7-font-family;
+        font-size: bkscale(@font-swatch7-font-size, 0.92);
+        font-weight: @font-swatch4-font-weight;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+    }
+    label {
+        display: none;
+        height; 0;
+        visibility: hidden;
+    }
 }
 
 
