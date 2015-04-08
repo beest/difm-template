@@ -73,6 +73,10 @@
     .ecomproductslist__form-body {
         .flex;
 
+        @media @mobile650px {
+            display: block;
+        }
+
         @media @tablet {
             -webkit-flex-wrap: wrap;
             -moz-flex-wrap: wrap;
@@ -90,9 +94,11 @@
             -moz-flex-grow: 1;
             -ms-flex: 1;
             flex-grow: 1;
-            @media @tablet {
-                -ms-flex: 0;
+            @media @tablet800px {
                 width: 47.5%;
+            }
+            @media @mobile650px {
+                width: 100%;
             }
         }
         select {
@@ -109,7 +115,6 @@
             -ms-flex: 1;
             flex-grow: 1;
             @media @mobile650px {
-                -ms-flex: 0;
                 width: 100%;
             }
         }
