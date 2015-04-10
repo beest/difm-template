@@ -450,10 +450,19 @@ button,
 
 .phone-number-link {
 	text-rendering: initial;
+
+    @media @tablet {
+        // Applies button styles at mobile
+        .button;
+        padding: 9px 12px;
+        text-decoration: none;
+    }
+
     &:hover {
         text-decoration: none;
     }
 }
+
 
 
 //  8.5  #PAYPAL
