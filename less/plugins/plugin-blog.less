@@ -155,7 +155,7 @@
 
 // Datestamp
 .post-footer time {
-	color: lighten(@font-swatch5-color, 25%);
+	color: lighten(@font-swatch5-color, 15%);
 	font-size: bkscale(@font-swatch5-font-size, 0.9);
 }
 
@@ -222,7 +222,7 @@
 
 	// Blog Post Title
 	.post-title {
-		margin: 50px 0 30px;
+		margin: 20px 0 35px;
 		text-align: center;
 		@media @mobile {
 			font-size: bkscale(@font-swatch1-font-size, 0.8);
@@ -245,9 +245,21 @@
 	.post-image {
 		position: relative;
 		text-align: center;
+		.image-link {
+			background-position: center center;
+			background-size: cover;
+			height: 425px;
+		}
 		.image {
-			max-height: 500px;
-			margin: 0 auto;
+			display: none;
+			line-height: 0;
+			visibility: hidden;
+		}
+	}
+
+	.post-body {
+		p img, img {
+			margin: 30px 0;
 		}
 	}
 
@@ -264,7 +276,9 @@
 
 	// Blog Footer
 	.post-footer {
-		margin: 45px auto 40px;
+		border-top: 1px solid rgb(237,237,237);
+		margin: 70px auto 40px;
+		padding-top: 35px;
 		max-width: 85%;
 		@media @mobile {
 			margin: 35px 0 15px;
@@ -317,6 +331,10 @@
 		}
 	}
 
+	.tag-item {
+		margin-right: 2px;
+	}
+
 	// Label
 	p, a {
 		color: @color-swatch4;
@@ -339,7 +357,7 @@
 
 	// Categorys
 	.category-link {
-		background-color: @color-swatch7;
+		background-color: lighten(@color-swatch7, 5%);
 		color: @color-swatch5;
 		padding: 6px 8px;
 		.transition(all .5s ease-out);
