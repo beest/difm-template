@@ -349,7 +349,6 @@
 
 // Slidehsow Controls
 .slide-navigation {
-    background-color: fade(@color-swatch4, 5%);
     margin: 0;
     font-size: 0;
     text-align: right;
@@ -360,16 +359,41 @@
         background-color: @color-swatch4;
 	    padding: 14px 20px 15px;
 		min-width: 56px;
+        vertical-align: top;
+        
         &.previous-button {
             border-right: 1px solid lighten(@color-swatch4, 10%);
             right: 153px;
+
+            &:after {
+                content: "\f177";
+                font-size: 20px;
+                position: relative;
+                display: block;
+                margin: 0;
+            }
         }
         &.pause-toggle {
             right: 78px;
             border-right: 1px solid lighten(@color-swatch4, 10%);
+
+            &:after {
+                content: "\f04c";
+                position: relative;
+                display: block;
+                margin: 0;
+            }
         }
         &.next-button {
             right: 0;
+
+            &:after {
+                content: "\f178";
+                font-size: 20px;
+                position: relative;
+                display: block;
+                margin: 0;
+            }
         }
         &.icon:before {
             margin-right: 0;
@@ -381,7 +405,7 @@
 .slide-pagination {
     bottom: 15px;
     position: absolute;
-    left: 22px;
+    left: 0;
     @media @mobile {
         display: none;
     }
@@ -553,6 +577,7 @@ button,
     }
     .icon:before {
         font-size: 20px;
+        margin-right: 0;
     }
 }
 

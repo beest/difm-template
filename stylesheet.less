@@ -155,7 +155,7 @@
 // Blockquote
 blockquote {
     border-left: 4px solid fade(@color-swatch2, 40%);
-    margin: 35px 0;
+    margin: 30px 0 35px;
     padding-left: 25px;
     &:before {
         content: "";
@@ -282,7 +282,7 @@ select::-ms-expand{
     display: flex;
     flex: 1;
     flex-direction: column;
-    width: 295px;
+    width: 300px;
     height: 100vh;
     padding-top: 65px;
     position: fixed;
@@ -356,6 +356,7 @@ select::-ms-expand{
         text-decoration: none!important;
         &:before {
             font-size: 22px;
+            margin-right: 0;
         }
         &:hover {
             .transition(all .5s ease-out);
@@ -604,7 +605,13 @@ div[role="main"] {
     }
 }
 
+.bk-zone {
+    margin: 0 auto;
+    max-width: 90%;
+}
+
 h1 {
+    padding-bottom: 15px;
     @media @mobile {
         font-size: bkscale(@font-swatch1-font-size, 0.85);
     }
