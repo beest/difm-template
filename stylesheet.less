@@ -670,11 +670,16 @@ h2 {
                 text-decoration: none;
             }
             figcaption {
-                display: flex;
                 height: 100%;
                 opacity: 1;
+                position: absolute;
+                top: 0;
                 .transform(scale(0.85));
                 visibility: visible;
+
+                .caption-link {
+                    height: 100%;
+                }
             }
         }
 
@@ -707,26 +712,14 @@ h2 {
 
     // Image Caption
     figcaption {
-        // Flex
-        display: flex;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        height: auto;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-
         background-color: transparent;
-        position: absolute;
+        position: relative;
         display: block;
         height: 0;
-        left: 0;
         margin: 0;
         padding: 0;
         opacity: 0;
         text-align: center;
-        top: 0;
         -webkit-transform: scale(0.85);
             -ms-transform: scale(0.85);
                 transform: scale(0.85);
@@ -736,9 +729,21 @@ h2 {
         @media @mobile {
             left: 0;
         }
-        .caption-link:hover {
-            text-decoration: none;
+
+        .caption-link {
+            // Flex
+            display: flex;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            &:hover {
+                text-decoration: none;
+            }
         }
+
         .image-title {
             color: white;
             text-transform: uppercase;

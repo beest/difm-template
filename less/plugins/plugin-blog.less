@@ -219,9 +219,13 @@
 		max-width: 750px;
 	}
 
+	.post-content {
+		margin-top: 0;
+	}
+
 	// Blog Post Title
 	.post-title {
-		padding: 22px 0 35px;
+		padding: 20px 0 35px;
 		text-align: center;
 		@media @mobile {
 			font-size: bkscale(@font-swatch1-font-size, 0.8);
@@ -249,14 +253,6 @@
 		}
 	}
 
-	.post-image + .post-content .post-header {
-		margin-top: 45px;
-
-		@media @mobile {
-			margin-top: 25px;
-		}
-	}
-
 	.post-body {
 		p img, img {
 			margin: 30px 0;
@@ -279,7 +275,6 @@
 		border-top: 1px solid rgb(237,237,237);
 		margin: 70px auto 40px;
 		padding-top: 35px;
-		max-width: 85%;
 		@media @mobile {
 			margin: 35px 0 15px;
 			max-width: 100%;
