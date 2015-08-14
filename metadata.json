@@ -30,7 +30,7 @@
             "color4":"#2b2d30",
             "color5":"#787878",
             "color6":"#a8aaad",
-            "color7":"#f0f0f0"
+            "color7":"#ffffff"
         },
         "Swatch 2": {
             "color1":"#ffffff",
@@ -138,7 +138,7 @@
             "font-size": "34px",
             "font-weight": "700",
             "line-height": "inherit",
-            "color": "@color-swatch4",
+            "color": "@color-swatch1",
             "letter-spacing": "inherit"
         },
         "font9": {
@@ -146,7 +146,7 @@
             "font-size": "20px",
             "font-weight": "inherit",
             "line-height": "inherit",
-            "color": "@color-swatch5",
+            "color": "@color-swatch1",
             "letter-spacing": "inherit"
         },
         "font10": {

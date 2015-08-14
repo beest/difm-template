@@ -1,15 +1,14 @@
-<header class="template-header">
+<header class="template-header  ">
 	<div class="header-main">
 		{{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png')})|raw}}
 		{{widget('companyname', 'companyname', {"business": "profile", "showTplWidget":"0"})|raw}}
-		<nav class="template-nav">
+		<nav class="template-navigation">
 			{{widget('extendednavigation', 'header-nav', {"align":"left"})|raw}}
 		</nav>
 	</div>
 	<footer class="template-footer">
 		<div class="footer-info">
 			{{widget('profile', 'header-social', { 'profileType':'socialicons'})|raw}}
-			{{widget('profile', 'header-copyright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
 		</div>
 	</footer>
 </header>

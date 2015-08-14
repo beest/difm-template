@@ -27,6 +27,7 @@
 
 @import "@{templateLocal}/less/typography.less";  // Typography
 @import "@{templateLocal}/less/widgets.less";     // Widgets
+@import "@{templateLocal}/less/custom-difm.less"; // Custom DIFM
 
 
 // Plugin Includes
@@ -42,7 +43,7 @@
 // -----------------------------
 
 
-@tablet800px: ~"only screen and (max-width: 800px)";
+@tablet800px: ~"only screen and (max-width: 850px)";
 @mobile650px: ~"only screen and (max-width: 650px)";
 
 
@@ -131,7 +132,6 @@
 // 3. Global
 // -----------------------------
 
-
 // Links
 .content-widget a {
     border-bottom: 1px dotted @color-swatch2;
@@ -200,7 +200,7 @@ input.input,
 select,
 .input--search.product-listing__input,
 .product-filters .input--search  {
-    border: 2px solid lighten(@font-swatch5-color, 40%);
+    border: 2px solid;
     border-radius: 0;
     box-shadow: none;
     -webkit-appearance: none;
@@ -256,16 +256,6 @@ select::-ms-expand{
 // 4. Layout
 // -----------------------------
 
-
-// Container
-.template-container {
-    margin: 0 auto;
-    max-width: 1200px;
-    @media only screen and (max-width: 1250px) {
-        margin: 0 25px;
-    }
-}
-
 .home-page, .default-page {
     .clearfix;
 }
@@ -276,56 +266,6 @@ select::-ms-expand{
 // 5. Header
 // -----------------------------
 
-
-.template-header {
-    // Flex
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    width: 300px;
-    height: 100vh;
-    padding-top: 65px;
-    position: fixed;
-    overflow-x: hidden;
-    overflow-y: auto;
-    z-index: 1;
-    @media only screen and (max-width: 1024px) {
-        width: 180px;
-    }
-    @media @tablet800px {
-        display: block;
-        min-height: initial;
-        position: relative;
-        width: 100%;
-        height: auto;
-        overflow: visible;
-    }
-    @media @mobile {
-        padding-top: 35px;
-    }
-    // Footer
-    .template-footer {
-        display: block;
-        margin-bottom: 25px;
-        @media @tablet800px {
-            display: none;
-        }
-    }
-    .logo,
-    .companyname {
-        margin-bottom: 10px;
-    }
-    .logo-image {
-        @media @tablet800px {
-            display: block;
-            margin: 0 auto;
-        }
-    }
-}
-
-.header-main {
-    flex: 1 0 auto;
-}
 
 // Company Name
 // ------------
@@ -416,7 +356,7 @@ select::-ms-expand{
 // Navigation
 // ----------
 
-.template-nav {
+.template-navigation {
     margin-top: 50px;
     // Flex
     @media @tablet800px {
@@ -428,27 +368,25 @@ select::-ms-expand{
 [data-widget-type="extendednavigation"] { width: 100%; }
 
 // Navigation List
-.bk-extendednavigation {
-    .navigation-body {
-        @media @tablet800px {
-            height: 0;
-            padding: 0;
-            opacity: 0;
-            visibility: hidden;
-            &.open {
-                height: 100%;
-                padding-bottom: 5px;
-                position: relative;
-                opacity: 1;
-                .transition(opacity 0.5s ease);
-                visibility: visible;
-            }
+.navigation-body {
+    @media @tablet800px {
+        height: 0;
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        &.open {
+            height: 100%;
+            padding-bottom: 5px;
+            position: relative;
+            opacity: 1;
+            .transition(opacity 0.5s ease);
+            visibility: visible;
         }
-        .navigation-list {
-            margin-top: 0;
-            @media @mobile {
-                margin-top: 12px;
-            }
+    }
+    .navigation-list {
+        margin-top: 0;
+        @media @mobile {
+            margin-top: 12px;
         }
     }
 }
@@ -457,15 +395,9 @@ select::-ms-expand{
 .navigation-item {
     display: block;
     white-space: normal;
-    &:after {
-        border-bottom: 1px solid @color-swatch7;
-        content: "";
-        display: block;
-        max-width: 100%;
-    }
+
     &:hover {
         .navigation-list--children {
-            border-top: 1px solid darken(@color-swatch7, 10%);
             height: auto;
             padding: 0;
             position: relative;
@@ -531,7 +463,7 @@ select::-ms-expand{
         border-top-color: @font-swatch6-color;
         margin: 2px 8px;
     }
-    &.selected > .item-name {
+    &.selected .item-name {
         color: darken(@color-swatch6, 40%);
     }
     // Dropdown Folder
@@ -605,15 +537,6 @@ div[role="main"] {
     }
 }
 
-.bk-zone {
-    margin: 0 auto;
-    max-width: 90%;
-
-    @media @tablet800px {
-        max-width: 100%;
-    }
-}
-
 h1 {
     padding-bottom: 15px;
     @media @mobile {
@@ -638,7 +561,7 @@ h2 {
 // Masonry Gallery
 // ---------------
 
-.home-page {
+.page--home {
     .gallery-list {
         .clearfix;
         &:hover li {
@@ -651,7 +574,7 @@ h2 {
         float: left;
         padding: 0 12px 24px;
         height: auto;
-        width: 33.33%;
+
         @media @tablet800px {
             width: 50%;
         }
@@ -659,6 +582,7 @@ h2 {
             padding: 0 0 24px;
             width: 100%;
         }
+
         img {
             -webkit-filter: grayscale(0%);
             .transition(all 0.5s ease-in-out);
@@ -798,15 +722,5 @@ h2 {
 
 
 .template-footer {
-    display: none;
-    @media @tablet800px {
-        display: block;
-        float: left;
-        margin: 30px 0;
-        text-align: center;
-        width: 100%;
-        .socialicons, .companycopyright {
-            display: block;
-        }
-    }
+
 }

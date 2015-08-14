@@ -1,0 +1,371 @@
+// -------------------------------------
+// Masonry: LESS > Custom DIFM Variables
+// -------------------------------------
+
+// -----------------------
+// Custom Colour Variables
+// -----------------------
+
+// Site
+@site-bg-color:         @color-swatch1;
+@site-canvas-bg-color:  @color-swatch1;
+@site-border-color:     #ececec;
+
+// Layout
+@header-bg-color:       @color-swatch4;
+@footer-bg-color:       @color-swatch7;
+
+// Typography / Buttons
+@heading-color:         @color-swatch4;
+@paragraph-color:       @color-swatch5;
+@button-bg-color:       @color-swatch3;
+
+// Navigation
+@nav-text-color:        @color-swatch6;
+@nav-text-color-active: @color-swatch3;
+
+
+// -----------------------
+// Custom Site Variables
+// -----------------------
+
+@site-width: 90%;    		   // Site width (90% max recommended)
+@site-spacing: 60px;           // Site spacing
+@intro-wrapper-spacing: 60px;  // Intro wrapper
+@feature-height: 200px;  	   // Feature
+
+// Site Positioning
+.site-container {
+
+	// Options: .left, .right, .center
+	.site-positioning .left;
+
+	// Options: .sidebar-left, .sidebar-right, .full
+	.site-layout .sidebar-left;
+
+}
+
+// Gallery Layout
+.gallery-item {
+
+	// Options: .full, .half, .thirds, .quarters
+	.gallery-layout .thirds;
+
+}
+
+// Sidebar Colours
+.sidebar {
+
+	// Options: .dark, .light
+	.sidebar-color .light;
+
+}
+
+
+
+
+
+// -----------------------
+// Custom Elements
+// -----------------------
+
+// Site
+// ---------
+
+body {
+    background-color: @site-bg-color;
+}
+
+// Zone Content
+.zone-content {
+	padding: 0 12px;
+}
+
+// Site Canvas
+.site-canvas {
+	background-color: @site-canvas-bg-color;
+}
+
+// Container
+.site-container {
+    max-width: @site-width;
+
+    @media (max-width: 1200px) {
+        max-width: 90%;
+    }
+    @media @tablet800px {
+    	max-width: 100%;
+    }
+}
+
+// Site Positioning
+.site-positioning {
+	.left {
+		margin-right: auto;
+		.sidebar {
+			padding-left: @site-spacing;
+		}
+	}
+	.center {
+		margin: 0 auto;
+		.sidebar {
+			padding-left: 0;
+		}
+	}
+	.right {
+		margin-left: auto;
+		.main {
+			padding-right: @site-spacing;
+		}
+	}
+}
+
+
+// Layout
+// ----------
+
+.site-container {
+	display: flex;
+	// display: block;
+}
+
+.sidebar {
+	width: 30%;
+	max-width: 380px;
+	height: 100vh;
+	padding: @site-spacing;
+}
+
+// Sidebar Color Variations
+.sidebar-color {
+
+	.dark {
+		background-color: @heading-color;
+
+		.navigation-item {
+			border-bottom: 1px solid lighten(@color-swatch4, 10%);
+
+			&.selected .item-name {
+				color: @site-bg-color;
+			}
+			.item-name {
+				&:hover {
+					color: @site-bg-color;
+				}
+			}
+		}
+	}
+
+	.light {
+		background-color: @site-bg-color;
+	}
+
+}
+
+.main {
+	width: 70%;
+	margin: @site-spacing 0 0 @site-spacing;
+}
+
+// Site Layout Mixin
+.site-layout {
+
+	// Sidebar: Right
+	.sidebar-right {
+		.sidebar {
+			order: 2;
+		}
+		.main {
+			order: 1;
+		}
+
+		.template-header {
+			padding-right: 0;
+			padding-left: @site-spacing;
+			text-align: right;
+		}
+		.navigation-item {
+			text-align: right;
+		}
+		.item-name--parent:before {
+			display: inline-block;
+		    border: 4px solid transparent;
+		    border-top-color: @font-swatch6-color;
+		    margin: 2px 8px;
+		    content: "";
+		}
+		.item-name--parent:after {
+			display: none;
+		}
+	}
+	// Full
+	.full {
+		.sidebar,
+		.main {
+			width: 100%;
+		}
+	}
+
+}
+
+
+// Template Elements
+// -----------------
+
+// Header
+// ----------
+
+// Header: Sidebar
+.template-header {
+	float: none;
+
+    @media @tablet800px {
+        width: 100%;
+    }
+}
+
+// Header: Full
+.template-header--full {
+	max-width: 100%;
+	padding: 0 12px @site-spacing;
+
+	// Layout
+	.header-main {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.template-navigation,
+	.navigation-body .navigation-list {
+		margin: 0;
+	}
+	.navigation-item {
+		display: inline-block;
+		border-bottom: 0;
+	}
+	.navigation-item .item-name {
+		padding-left: 20px;
+
+		&.item-name--parent {
+			padding-right: 0;
+		}
+	}
+
+	.template-footer {
+    	display: none;
+    }
+}
+
+.logo {
+	line-height: 0;
+	font-size: 0;
+}
+
+[data-widget-type="companyname"] {
+    display: none;
+}
+
+// Footer
+.template-footer {
+    padding-top: @site-spacing;
+}
+
+// Navigation
+.navigation-list--children {
+	background-color: transparent;
+}
+.navigation-item {
+	border-bottom: 1px solid @site-border-color;
+}
+.navigation-item .item-name {
+    color: @nav-text-color;
+}
+.navigation-item.selected .item-name {
+    color: @nav-text-color-active;
+}
+
+
+// Main Content
+// ------------
+
+div[role="main"].main {
+	float: none;
+	// width: 70%;
+	padding: 0;
+
+	@media @tablet800px {
+		width: 100%;
+	}
+}
+
+// Intro Wrapper
+.intro-wrapper {
+	text-align: center;
+	padding: @intro-wrapper-spacing 12px;
+}
+
+
+// Typography / Buttons
+// --------------------
+
+h1, h2, h3, h4, h5 {
+    color: @heading-color;
+}
+p {
+    color: @paragraph-color;
+}
+.button {
+    background-color: @button-bg-color;
+}
+
+
+// Widgets
+// ----------------
+
+// Feature
+.feature {
+	.background-image {
+	    height: @feature-height;
+	    margin: 0 12px 20px;
+	}
+	.content-wrap {
+	    display: flex;
+	    align-items: center;
+	    height: 100%;
+	    background-color: rgba(0, 0, 0, 0.4);
+		text-align: center;
+	}
+	.content-inner-wrap {
+		width: 100%;
+	}
+	.strapline {
+		display: none;
+	}
+}
+
+
+// Gallery
+.gallery-layout {
+	.full {
+		width: 100%;
+
+		.image {
+			margin: 0 auto;
+		}
+	}
+	.half {
+		width: 50%;
+	}
+	.thirds {
+		width: 33.333%;
+	}
+	.quarters {
+		width: 25%;
+	}
+}
+
+
+
+
+
