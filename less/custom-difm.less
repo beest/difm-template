@@ -62,7 +62,7 @@
 // Header Options
 // --------------
 
-@header-spacing: 20px;   // Header spacing
+@header-spacing: 20px; // Header spacing
 
 .template-header  {
 
@@ -70,7 +70,7 @@
 	.header-layout .left;
 
 	// Position (Options: .standard, .overlap)
-	.header-position .overlap;
+	.header-position .standard;
 
 	// BG Colour (Options: .dark, .light)
 	.header-color .light;
@@ -308,6 +308,13 @@
 		.flex-container {
 			display: flex;
 			justify-content: space-between;
+
+			.flex-item:first-child {
+				margin-right: 20px;
+			}
+			.flex-item:last-child {
+				flex: 1 1 auto;
+			}
 		}
 	}
 	.central {
