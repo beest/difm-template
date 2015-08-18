@@ -40,17 +40,13 @@
 // Change the values below to achieve
 // different layouts and positioning
 
-@site-width:         100%;   // Site width
-@site-content-width: 90%; // Content width
-@site-spacing:       40px;   // Site spacing
-@header-spacing:     20px;   // Header spacing
-
-@feature-overlay-opacity: 0.5;			 // Feature opacity
-@feature-overlay-color: @color-swatch4;  // Feature BG color
-
 
 // Site Options
 // ------------
+
+@site-width:         100%;   // Site width
+@site-content-width: 90%;    // Content width (wrapper)
+@site-spacing:       40px;   // Site spacing
 
 .site-container {
 
@@ -66,22 +62,27 @@
 // Header Options
 // --------------
 
-.template-header {
+@header-spacing: 20px;   // Header spacing
+
+.template-header  {
 
 	// Layout (Options: .left, .right, .central)
 	.header-layout .left;
 
-	// Posotion (Options: .standard, .overlap)
+	// Position (Options: .standard, .overlap)
 	.header-position .overlap;
 
 	// BG Colour (Options: .dark, .light)
-	.header-color .dark;
+	.header-color .light;
 
 }
 
 
 // Feature Options
 // ---------------
+
+@feature-overlay-opacity: 0.4;			 // Feature opacity
+@feature-overlay-color: @color-swatch4;  // Feature BG color
 
 .feature {
 
@@ -94,11 +95,27 @@
 		.feature-alignment .center;
 
 		// Parallax (Options: .on, .off)
-		.feature-parallax .off;
+		.feature-parallax .on;
 	}
 
 	// Transparency (Options: .full-overlay, .type-overlay, .none)
 	.feature-transparency .full-overlay;
+
+}
+
+
+// Footer Options
+// --------------
+
+@footer-spacing: 100px; // Footer spacing
+
+.template-footer {
+
+	// Layout (Options: .single, .split)
+	.footer-layout .split;
+
+	// BG Colour (Options: .dark, .light)
+	.footer-color .light;
 
 }
 
@@ -272,7 +289,7 @@
 
 	.overlap {
 		position: absolute;
-		z-index: 999;
+		z-index: 9999;
 
 		.logo-image {
 			box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -288,8 +305,10 @@
 .header-layout {
 
 	.left {
-		display: flex;
-		justify-content: space-between;
+		.flex-container {
+			display: flex;
+			justify-content: space-between;
+		}
 	}
 	.central {
 		display: block;
@@ -300,9 +319,11 @@
 		}
 	}
 	.right {
-		display: flex;
-		flex-direction: row-reverse;
-		justify-content: space-between;
+		.flex-container {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+		}
 	}
 
 }
@@ -399,6 +420,51 @@
 }
 
 
+// Footer
+// ----------
+
+// Footer Layout
+.footer-layout {
+
+	.single {
+		display: block;
+		text-align: center;
+	}
+	.split {
+		.flex-container {
+			display: flex;
+
+			.flex-item {
+				-webkit-flex-basis: 50%;
+			    -ms-flex-preferred-size: 50%;
+			    flex-basis: 50%;
+			    max-width: 50%;
+			}
+		}
+	}
+
+}
+
+// Footer Color
+.footer-color {
+
+	.light {
+		background-color: @footer-bg-color;
+	}
+	.dark {
+		background-color: @heading-color;
+
+		h1, h2, h3, h4 {
+			color: @site-bg-color;
+		}
+		p {
+			color: darken(@site-bg-color, 30%);
+		}
+	}
+
+}
+
+
 // Gallery
 // ----------
 
@@ -471,15 +537,6 @@ body {
 	font-size: 0;
 }
 
-[data-widget-type="companyname"] {
-    display: none;
-}
-
-// Footer
-.template-footer {
-    padding-top: @site-spacing;
-}
-
 // Navigation
 .navigation-list--children {
 	background-color: transparent;
@@ -493,6 +550,25 @@ body {
 }
 .navigation-item.selected .item-name {
     color: @nav-text-color-active;
+}
+
+
+// Footer
+// ----------
+
+.template-footer {
+	padding: @footer-spacing 0;
+
+	h1, h2, h3, h4, p {
+		margin-bottom: 20px;
+	}
+}
+
+.footer-image {
+	font-size: 0;
+}
+.footer-image .image {
+	background-attachment: fixed;
 }
 
 
