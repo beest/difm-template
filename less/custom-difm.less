@@ -2,18 +2,23 @@
 // Masonry: LESS > Custom DIFM Variables
 // -------------------------------------
 
+#tdk-toolbar {
+	display: none!important;
+}
+
+
 // -----------------------
 // Custom Colour Variables
 // -----------------------
 
 // Site
 @site-bg-color:         @color-swatch1;
-@site-canvas-bg-color:  @color-swatch1;
-@site-border-color:     #ececec;
+@site-content-bg-color: @color-swatch1;
 
 // Layout
-@header-bg-color:       @color-swatch4;
-@footer-bg-color:       @color-swatch7;
+@header-bg-color:       @site-bg-color;
+@footer-bg-color:       @site-bg-color;
+@sidebar-bg-color:      @color-swatch4;
 
 // Typography / Buttons
 @heading-color:         @color-swatch4;
@@ -25,154 +30,144 @@
 @nav-text-color-active: @color-swatch3;
 
 
+
+
+
 // -----------------------
 // Custom Site Variables
 // -----------------------
 
-@site-width: 90%;    		   // Site width (90% max recommended)
-@site-spacing: 60px;           // Site spacing
-@intro-wrapper-spacing: 60px;  // Intro wrapper
-@feature-height: 200px;  	   // Feature
+// Change the values below to achieve
+// different layouts and positioning
 
-// Site Positioning
+@site-width:         100%;   // Site width
+@site-content-width: 90%; // Content width
+@site-spacing:       40px;   // Site spacing
+@header-spacing:     20px;   // Header spacing
+
+@feature-overlay-opacity: 0.5;			 // Feature opacity
+@feature-overlay-color: @color-swatch4;  // Feature BG color
+
+
+// Site Options
+// ------------
+
 .site-container {
 
-	// Options: .left, .right, .center
-	.site-positioning .left;
+	// Position (Options: .left, .right, .center)
+	.site-position .center;
 
-	// Options: .sidebar-left, .sidebar-right, .full
-	.site-layout .sidebar-left;
+	// Layout (Options: .sidebar-left, .sidebar-right, .full)
+	.site-layout .full;
 
 }
 
-// Gallery Layout
+
+// Header Options
+// --------------
+
+.template-header {
+
+	// Layout (Options: .left, .right, .central)
+	.header-layout .left;
+
+	// Posotion (Options: .standard, .overlap)
+	.header-position .overlap;
+
+	// BG Colour (Options: .dark, .light)
+	.header-color .dark;
+
+}
+
+
+// Feature Options
+// ---------------
+
+.feature {
+
+	// Height (Options: .small, .medium, .large)
+	.feature-height .large;
+
+	.content-inner-wrap {
+
+		// Alignment (Options: .left, .right, .center)
+		.feature-alignment .center;
+
+		// Parallax (Options: .on, .off)
+		.feature-parallax .off;
+	}
+
+	// Transparency (Options: .full-overlay, .type-overlay, .none)
+	.feature-transparency .full-overlay;
+
+}
+
+
+// Gallery Options
+// ---------------
+
 .gallery-item {
 
 	// Options: .full, .half, .thirds, .quarters
-	.gallery-layout .thirds;
+	.gallery-layout .quarters;
 
 }
-
-// Sidebar Colours
-.sidebar {
-
-	// Options: .dark, .light
-	.sidebar-color .light;
-
-}
-
 
 
 
 
 // -----------------------
-// Custom Elements
+// Custom Mixins
 // -----------------------
 
-// Site
-// ---------
 
-body {
-    background-color: @site-bg-color;
-}
+// Site Position
+// -------------
 
-// Zone Content
-.zone-content {
-	padding: 0 12px;
-}
+.site-position {
 
-// Site Canvas
-.site-canvas {
-	background-color: @site-canvas-bg-color;
-}
-
-// Container
-.site-container {
-    max-width: @site-width;
-
-    @media (max-width: 1200px) {
-        max-width: 90%;
-    }
-    @media @tablet800px {
-    	max-width: 100%;
-    }
-}
-
-// Site Positioning
-.site-positioning {
 	.left {
 		margin-right: auto;
-		.sidebar {
+
+		.template-header {
 			padding-left: @site-spacing;
 		}
 	}
 	.center {
 		margin: 0 auto;
-		.sidebar {
-			padding-left: 0;
-		}
 	}
 	.right {
 		margin-left: auto;
+
 		.main {
 			padding-right: @site-spacing;
 		}
 	}
+
 }
 
 
-// Layout
-// ----------
+// Site Layout
+// -----------
 
-.site-container {
-	display: flex;
-	// display: block;
-}
+.site-layout {
 
-.sidebar {
-	width: 30%;
-	max-width: 380px;
-	height: 100vh;
-	padding: @site-spacing;
-}
-
-// Sidebar Color Variations
-.sidebar-color {
-
-	.dark {
-		background-color: @heading-color;
-
-		.navigation-item {
-			border-bottom: 1px solid lighten(@color-swatch4, 10%);
-
-			&.selected .item-name {
-				color: @site-bg-color;
-			}
-			.item-name {
-				&:hover {
-					color: @site-bg-color;
-				}
-			}
+	// Sidebar: Left
+	.sidebar-left {
+		.template-header {
+			width: 30%;
+			max-width: 380px;
+			height: 100vh;
+			padding: @site-spacing;
+		}
+		.main {
+			width: 70%;
 		}
 	}
 
-	.light {
-		background-color: @site-bg-color;
-	}
-
-}
-
-.main {
-	width: 70%;
-	margin: @site-spacing 0 0 @site-spacing;
-}
-
-// Site Layout Mixin
-.site-layout {
-
 	// Sidebar: Right
 	.sidebar-right {
-		.sidebar {
+		.template-header {
 			order: 2;
 		}
 		.main {
@@ -198,64 +193,278 @@ body {
 			display: none;
 		}
 	}
+
 	// Full
 	.full {
-		.sidebar,
+		display: block;
+
+		// Header
+		.template-header {
+			width: 100%;
+			max-width: 100%;
+			height: inherit;
+			align-items: center;
+			padding: @header-spacing 0;
+		}
+		.template-header {
+			max-width: 100%;
+
+			.template-navigation,
+			.navigation-body .navigation-list {
+				margin: 0;
+			}
+			.navigation-item {
+				display: inline-block;
+				border-bottom: 0;
+
+				&:last-child .item-name {
+					padding-right: 0;
+				}
+			}
+			.navigation-item .item-name {
+				padding-left: 30px;
+
+				&.item-name--parent {
+					padding-right: 0;
+				}
+			}
+
+			.template-footer {
+		    	display: none;
+		    }
+
+		    // Dropdown menu
+		    .navigation-item.folder .navigation-list {
+				position: absolute;
+				min-width: 150px;
+
+				.navigation-item {
+					display: block;
+					width: 100%;
+					background-color: @site-bg-color;
+				}
+				.navigation-item--child {
+					padding: 0 10px;
+
+					.item-name {
+						padding: 4px 10px;
+					}
+				}
+			}
+		}
+
+		// Main
 		.main {
 			width: 100%;
+			margin: 0;
+			padding: @site-spacing 0;
 		}
 	}
 
 }
 
-
-// Template Elements
-// -----------------
 
 // Header
 // ----------
 
-// Header: Sidebar
-.template-header {
-	float: none;
+// Header Position
+.header-position {
 
-    @media @tablet800px {
-        width: 100%;
-    }
+	.overlap {
+		position: absolute;
+		z-index: 999;
+
+		.logo-image {
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+
+		.header-color .dark; // Make transparent on overlap
+		background-color: transparent;
+	}
+
 }
 
-// Header: Full
-.template-header--full {
-	max-width: 100%;
-	padding: 0 12px @site-spacing;
+// Header Layout
+.header-layout {
 
-	// Layout
-	.header-main {
+	.left {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+	}
+	.central {
+		display: block;
+		text-align: center;
+		.navigation-list {
+			padding-top: @header-spacing;
+			text-align: center;
+		}
+	}
+	.right {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
 	}
 
-	.template-navigation,
-	.navigation-body .navigation-list {
-		margin: 0;
-	}
-	.navigation-item {
-		display: inline-block;
-		border-bottom: 0;
-	}
-	.navigation-item .item-name {
-		padding-left: 20px;
+}
 
-		&.item-name--parent {
-			padding-right: 0;
+// Header Color
+.header-color {
+
+	.dark {
+		background-color: @sidebar-bg-color;
+
+		.navigation-item {
+			border-bottom: 1px solid lighten(@color-swatch4, 10%);
+
+			.item-name {
+				color: darken(@site-bg-color, 20%);
+
+				&:hover {
+					color: @site-bg-color;
+				}
+			}
+			&.selected .item-name {
+				color: @site-bg-color;
+			}
 		}
 	}
 
-	.template-footer {
-    	display: none;
-    }
 }
+
+
+// Feature
+// ----------
+
+// Feature Height
+.feature-height {
+
+	.small {
+		height: 400px;
+	}
+	.medium {
+		height: 600px;
+	}
+	.large {
+		height: 800px;
+	}
+
+}
+
+// Feature Alignment
+.feature-alignment {
+
+	.left {
+		align-items: flex-start;
+	}
+	.right {
+		align-items: flex-end;
+	}
+	.center {
+		align-items: center;
+	}
+
+}
+
+// Feature Transparency
+.feature-transparency {
+
+	.full-overlay {
+		.content-wrap {
+			background-color: hsla(hue(@feature-overlay-color), saturation(@feature-overlay-color), lightness(@feature-overlay-color), @feature-overlay-opacity);
+		}
+	}
+	.type-overlay {
+		.headline,
+		.strapline {
+			display: inline-block;
+			background-color: hsla(hue(@color-swatch4), saturation(@color-swatch4), lightness(@color-swatch4), 0.7);
+		}
+		.headline {
+			padding: 20px;
+		}
+		.strapline {
+			padding: 7px 20px;
+		}
+	}
+
+}
+
+// Feature Parallax
+.feature-parallax {
+
+	.off {
+		opacity: 1!important;
+	}
+
+}
+
+
+// Gallery
+// ----------
+
+.gallery-layout {
+
+	.full {
+		width: 100%;
+
+		.image {
+			margin: 0 auto;
+		}
+	}
+	.half {
+		width: 50%;
+	}
+	.thirds {
+		width: 33.333%;
+	}
+	.quarters {
+		width: 25%;
+	}
+
+}
+
+
+
+
+
+// -----------------------
+// Template Elements
+// -----------------------
+
+// Site
+// ---------
+
+body {
+    background-color: @site-bg-color;
+}
+
+// Site Canvas
+.site-content {
+	position: relative;
+	display: block;
+	width: @site-content-width;
+	// max-width: 90%;
+	margin: 0 auto;
+}
+
+// Zone Content
+.zone-content {
+	// padding: 0 12px;
+}
+
+
+// Layout
+// ----------
+
+.site-container {
+	// display: flex;
+	display: block;
+	max-width: @site-width;
+}
+
+
+// Header
+// ----------
 
 .logo {
 	line-height: 0;
@@ -280,6 +489,7 @@ body {
 }
 .navigation-item .item-name {
     color: @nav-text-color;
+    text-transform: uppercase;
 }
 .navigation-item.selected .item-name {
     color: @nav-text-color-active;
@@ -316,54 +526,64 @@ p {
     color: @paragraph-color;
 }
 .button {
+	padding: 8px 24px;
     background-color: @button-bg-color;
+    border-radius: 0;
+    text-transform: uppercase;
+    .transition(all 0.5s ease-out);
+
+    &:hover {
+        background-color: @font-swatch7-background-color-hover;
+    }
+
 }
 
-
-// Widgets
-// ----------------
 
 // Feature
+// ----------------
+
 .feature {
+	overflow: hidden;
+
 	.background-image {
-	    height: @feature-height;
-	    margin: 0 12px 20px;
+		height: 100%;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	    background-position: center;
+	    background-attachment: fixed; // Parallax effect
 	}
 	.content-wrap {
-	    display: flex;
-	    align-items: center;
+		width: 100%;
 	    height: 100%;
-	    background-color: rgba(0, 0, 0, 0.4);
-		text-align: center;
 	}
 	.content-inner-wrap {
-		width: 100%;
+		display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+
+	    height: 100%;
+	}
+	.headline {
+		text-transform: uppercase;
 	}
 	.strapline {
-		display: none;
+		margin: 20px 0;
 	}
 }
 
 
-// Gallery
-.gallery-layout {
-	.full {
-		width: 100%;
 
-		.image {
-			margin: 0 auto;
-		}
-	}
-	.half {
-		width: 50%;
-	}
-	.thirds {
-		width: 33.333%;
-	}
-	.quarters {
-		width: 25%;
-	}
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

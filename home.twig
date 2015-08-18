@@ -3,50 +3,47 @@
 {% block content %}
 
 <div class="page--home">
-	<div class="site-container  site-canvas">
+	<div class="site-container">
 
-		<div class="sidebar">
+		<div class="site-content">
 			{% include "includes/header.twig" %}
 		</div>
 
+		{{widget('feature', 'feature', {
+		  'header': 'Welcome to Heaters Bakery',
+		  'strapline': 'Fantastic home baked goodness for all the family!',
+		  'defaultBgImg': asset('images/feature-image.jpg'),
+		  'positionTopPercentage': '100',
+		  'showBtn': true,
+		  'buttonText': 'Button',
+		  'action': 'external',
+		  'url': 'http://docs.basekit.com',
+		  'target': '_blank'
+		})|raw}}
+
 		<div class="main">
 
-			<!-- GALLERY WIDGET -->
-			{{widget('gallery', 'home-gallery', {
-			'showTitle': true,
-			'showDescription': false,
-			'images':[
-				{'url':asset('/images/gallery/3.jpg'),'title':'First image title'},
-				{'url':asset('/images/gallery/2.jpg')},
-				{'url':asset('/images/gallery/7.jpg')},
-				{'url':asset('/images/gallery/6.jpg'), 'title':'First image title'},
-				{'url':asset('/images/gallery/1.jpg')},
-				{'url':asset('/images/gallery/4.jpg'), 'title':'First image title'},
-				{'url':asset('/images/gallery/5.jpg')}
-			]})|raw}}
+			<div class="site-content">
+				<div class="zone-content">
+					{# {{zone('main')|raw}} #}
+					<h2>Content goes here.</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras velit mi, lacinia in ultrices id, posuere at erat. Phasellus eget sagittis tellus. Cras tempor, justo eget interdum convallis, lectus tortor sollicitudin tellus, finibus hendrerit erat metus dignissim augue. Suspendisse vitae arcu id risus lacinia consequat. Vestibulum dignissim lacus metus, ut eleifend nulla sagittis ut. Aenean ut odio pulvinar, congue velit non, volutpat leo. Nullam a lectus orci. Phasellus iaculis at orci sed iaculis. Sed luctus tortor feugiat ex viverra, nec egestas magna fermentum.</p>
 
-			<div class="intro-wrapper">
-				{{widget('content', 'text1', { content: '
-					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing.</h2>
-					<p>Integer sit amet aliquam odio. Duis non lorem ullamcorper, facilisis esta.</p>
-				'})|raw}}
+					<p>Integer ut nisl placerat enim semper semper ac sit amet quam. Donec eu interdum urna. Vivamus at vulputate sem. Aliquam lorem nisi, scelerisque vitae rutrum ut, tincidunt nec mauris. Etiam a eros dui. Aenean scelerisque dapibus felis. Aliquam erat volutpat. Fusce id ante commodo odio lobortis semper. Ut ut metus nec enim porttitor vestibulum eu et dui.</p>
+
+					<p> consequat ante in purus lobortis malesuada. Proin ultricies nisl nec nibh ullamcorper fermentum. Fusce quam felis, pharetra at hendrerit ut, imperdiet eget turpis. Vivamus purus erat, venenatis id arcu et, sodales consectetur est. Integer ut sagittis lorem, vitae placerat odio. Morbi et vulputate dui, vel cursus diam. Ut magna quam, accumsan bibendum lorem nec, aliquam dapibus est. In risus lacus, porta sed lacus sit amet, accumsan lobortis justo. Pellentesque ac tortor non mi accumsan vestibulum eu at nulla. Mauris ornare turpis nisi, sit amet eleifend ex egestas eget. Suspendisse sodales, massa vitae cursus ornare, lorem urna luctus erat, et auctor ipsum mi quis augue. Maecenas odio ex, interdum ac hendrerit ac, ullamcorper et lectus. Fusce congue, tortor ut ultrices eleifend, lacus odio ultrices quam, luctus rutrum lacus nisl varius tellus.</p>
+
+					<p>Suspendisse eu ultrices enim. Mauris semper eleifend nunc, sollicitudin hendrerit mauris mollis eu. Morbi imperdiet ante id tortor mattis varius. Mauris gravida, justo non efficitur aliquam, enim orci vehicula nibh, laoreet auctor nisi est a tortor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vehicula consequat eros sit amet tristique. Mauris nec arcu dictum metus congue auctor a in nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam magna quam, placerat ut nunc eu, tincidunt accumsan elit. Curabitur mauris libero, molestie ac magna tincidunt, fermentum elementum ante.</p>
+
+					<p>Cras sit amet quam eget orci bibendum viverra aliquet non urna. Mauris non suscipit magna. Suspendisse sed molestie urna. Etiam pellentesque commodo erat, ac volutpat orci molestie eu. Aliquam venenatis mollis tincidunt. Nam sagittis eget nibh id eleifend. Etiam non nisi at magna maximus tempus consectetur tempor sapien. Aliquam ut rhoncus magna. In hac habitasse platea dictumst. Sed sed tortor facilisis, auctor neque a, venenatis ipsum. Phasellus ac consectetur ante. Proin venenatis augue ac enim consectetur, at sagittis libero fermentum. Maecenas sed commodo lectus, id tempus risus. Maecenas aliquam blandit libero, et fermentum ligula euismod et. Fusce dui est, fringilla in libero ac, rhoncus vehicula tortor. Pellentesque vitae orci semper, laoreet tortor non, mattis augu</p>
+
+					<p>Cras sit amet quam eget orci bibendum viverra aliquet non urna. Mauris non suscipit magna. Suspendisse sed molestie urna. Etiam pellentesque commodo erat, ac volutpat orci molestie eu. Aliquam venenatis mollis tincidunt. Nam sagittis eget nibh id eleifend. Etiam non nisi at magna maximus tempus consectetur tempor sapien. Aliquam ut rhoncus magna. In hac habitasse platea dictumst. Sed sed tortor facilisis, auctor neque a, venenatis ipsum. Phasellus ac consectetur ante. Proin venenatis augue ac enim consectetur, at sagittis libero fermentum. Maecenas sed commodo lectus, id tempus risus. Maecenas aliquam blandit libero, et fermentum ligula euismod et. Fusce dui est, fringilla in libero ac, rhoncus vehicula tortor. Pellentesque vitae orci semper, laoreet tortor non, mattis augu</p>
+
+					<p>Cras sit amet quam eget orci bibendum viverra aliquet non urna. Mauris non suscipit magna. Suspendisse sed molestie urna. Etiam pellentesque commodo erat, ac volutpat orci molestie eu. Aliquam venenatis mollis tincidunt. Nam sagittis eget nibh id eleifend. Etiam non nisi at magna maximus tempus consectetur tempor sapien. Aliquam ut rhoncus magna. In hac habitasse platea dictumst. Sed sed tortor facilisis, auctor neque a, venenatis ipsum. Phasellus ac consectetur ante. Proin venenatis augue ac enim consectetur, at sagittis libero fermentum. Maecenas sed commodo lectus, id tempus risus. Maecenas aliquam blandit libero, et fermentum ligula euismod et. Fusce dui est, fringilla in libero ac, rhoncus vehicula tortor. Pellentesque vitae orci semper, laoreet tortor non, mattis augu</p>
+
+					<p>Cras sit amet quam eget orci bibendum viverra aliquet non urna. Mauris non suscipit magna. Suspendisse sed molestie urna. Etiam pellentesque commodo erat, ac volutpat orci molestie eu. Aliquam venenatis mollis tincidunt. Nam sagittis eget nibh id eleifend. Etiam non nisi at magna maximus tempus consectetur tempor sapien. Aliquam ut rhoncus magna. In hac habitasse platea dictumst. Sed sed tortor facilisis, auctor neque a, venenatis ipsum. Phasellus ac consectetur ante. Proin venenatis augue ac enim consectetur, at sagittis libero fermentum. Maecenas sed commodo lectus, id tempus risus. Maecenas aliquam blandit libero, et fermentum ligula euismod et. Fusce dui est, fringilla in libero ac, rhoncus vehicula tortor. Pellentesque vitae orci semper, laoreet tortor non, mattis augu</p>
+				</div>
 			</div>
-
-			{# {{widget('feature', 'homepagefeature', {
-			  'header': 'Welcome to Masonry',
-			  'strapline': '',
-			  'defaultBgImg': asset('images/feature-image.jpg'),
-			  'positionTopPercentage': '50',
-			  'showBtn': false,
-			  'buttonText': 'Button',
-			  'action': 'external',
-			  'url': 'http://docs.basekit.com',
-			  'target': '_blank'
-			})|raw}} #}
-
-			<!-- <div class="zone-content">
-				{{zone('main')|raw}}
-			</div> -->
 
 		</div>
 
@@ -64,6 +61,27 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.2.1/masonry.pkgd.min.js"></script>
 
 	<script>
+
+		// Fixed position and fade out when scrolling
+		var scrollEffect = function (elem) {
+
+			// How high the window is
+			var window_height = window.innerHeight;
+
+			// Apply styles as user scrolls
+			elem.setAttribute(
+				"style", "opacity:" + Math.max(0, parseFloat(1-(1.8/window_height*window.pageYOffset)).toFixed(2)) + "; -webkit-transform: translateY(" + window.pageYOffset + "px)"
+			);
+
+		};
+
+	var elem = document.querySelector('.content-inner-wrap');
+
+	window.onscroll = function(e) {
+		scrollEffect(elem);
+	};
+
+		// Masonry effect
 		var container = document.querySelector('.gallery-list');
 
 		imagesLoaded( container, function() {
@@ -71,6 +89,7 @@
 				itemSelector: '.gallery-item'
 			});
 		});
+
 	</script>
 
 {% endblock %}
