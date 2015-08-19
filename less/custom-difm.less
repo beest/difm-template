@@ -225,6 +225,14 @@
 		}
 		.flex-container {
 			align-items: center;
+
+			@media @tablet800px {
+				.flex-item:first-child,
+				.flex-item:nth-child(2) {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
 		}
 		.template-navigation {
 			@media @tablet800px {
@@ -434,12 +442,15 @@
 
 	.left {
 		align-items: flex-start;
+		text-align: left;
 	}
 	.right {
 		align-items: flex-end;
+		text-align: right;
 	}
 	.center {
 		align-items: center;
+		text-align: center;
 	}
 
 }
@@ -593,6 +604,15 @@ body {
 .logo {
 	line-height: 0;
 	font-size: 0;
+}
+
+// Company Name
+.companyname {
+    display: block;
+
+    @media @tablet800px {
+    	margin-top: 20px;
+    }
 }
 
 // Navigation

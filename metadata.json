@@ -137,7 +137,7 @@
             "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "44px",
             "font-weight": "400",
-            "line-height": "inherit",
+            "line-height": "50px",
             "color": "@color-swatch3",
             "letter-spacing": "inherit"
         },
