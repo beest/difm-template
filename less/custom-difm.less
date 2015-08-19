@@ -14,11 +14,12 @@
 // Site
 @site-bg-color:         @color-swatch1;
 @site-content-bg-color: @color-swatch1;
-@site-border-color:     #e4e4e4;
+
 
 // Layout
 @header-bg-color:       @site-bg-color;
 @footer-bg-color:       @site-bg-color;
+@footer-border-color:   @color-swatch3;
 @sidebar-bg-color:      @color-swatch4;
 
 // Typography / Buttons
@@ -29,6 +30,7 @@
 // Navigation
 @nav-text-color:        @color-swatch6;
 @nav-text-color-active: @color-swatch4;
+@nav-border-color:      #e4e4e4;
 
 
 
@@ -113,7 +115,7 @@
 .template-footer {
 
 	// Layout (Options: .single, .split)
-	.footer-layout .split;
+	.footer-layout .single;
 
 	// BG Colour (Options: .dark, .light)
 	.footer-color .light;
@@ -236,7 +238,7 @@
 		.template-navigation {
 			@media @tablet800px {
 				margin-top: @header-spacing;
-				border-top: 1px solid @site-border-color;
+				border-top: 1px solid @nav-border-color;
 			}
 		}
 
@@ -248,71 +250,6 @@
 		}
 	}
 
-}
-
-.template-header {
-
-	@media @tablet800px {
-		padding-bottom: 0;
-		margin-bottom: 0;
-	}
-
-	.navigation-list {
-		margin-bottom: 0;
-
-		@media @tablet800px {
-			text-align: left;
-		}
-	}
-
-	.navigation-item {
-		display: inline-block;
-		border-bottom: 0;
-
-		@media @tablet800px {
-			display: block;
-
-			&:first-child {
-				padding-top: 10px;
-				border-top: 1px solid @site-border-color;
-			}
-		}
-
-		.item-name {
-			padding-left: 30px;
-
-			@media @tablet800px {
-				padding-left: 0;
-			}
-
-			&.item-name--parent {
-				padding-right: 0;
-			}
-		}
-
-		&:last-child .item-name {
-			padding-right: 0;
-		}
-	}
-
-    // Dropdown menu
-    .navigation-item.folder .navigation-list {
-		position: absolute;
-		min-width: 150px;
-
-		.navigation-item {
-			display: block;
-			width: 100%;
-			background-color: @site-bg-color;
-		}
-		.navigation-item--child {
-			padding: 0 10px;
-
-			.item-name {
-				padding: 4px 10px;
-			}
-		}
-	}
 }
 
 
@@ -533,6 +470,10 @@
 	.single {
 		display: block;
 		text-align: center;
+
+		.flex-item:last-child {
+			margin-top: 60px;
+		}
 	}
 	.split {
 		.flex-container {
@@ -557,6 +498,7 @@
 	}
 	.dark {
 		background-color: @heading-color;
+		border-top: 4px solid @footer-border-color;
 
 		h1, h2, h3, h4 {
 			color: @site-bg-color;
@@ -636,6 +578,72 @@ body {
 // Header
 // ----------
 
+.template-header {
+
+	@media @tablet800px {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+
+	.navigation-list {
+		margin-bottom: 0;
+
+		@media @tablet800px {
+			text-align: left;
+		}
+	}
+
+	.navigation-item {
+		display: inline-block;
+		border-bottom: 0;
+
+		@media @tablet800px {
+			display: block;
+
+			&:first-child {
+				padding-top: 10px;
+				border-top: 1px solid @nav-border-color;
+			}
+		}
+
+		.item-name {
+			padding-left: 30px;
+
+			@media @tablet800px {
+				padding-left: 0;
+			}
+
+			&.item-name--parent {
+				padding-right: 0;
+			}
+		}
+
+		&:last-child .item-name {
+			padding-right: 0;
+		}
+	}
+
+    // Dropdown menu
+    .navigation-item.folder .navigation-list {
+		position: absolute;
+		min-width: 150px;
+
+		.navigation-item {
+			display: block;
+			width: 100%;
+			background-color: @site-bg-color;
+		}
+		.navigation-item--child {
+			padding: 0 10px;
+
+			.item-name {
+				padding: 4px 10px;
+			}
+		}
+	}
+}
+
+// Logo
 .logo {
 	line-height: 0;
 	font-size: 0;
@@ -655,7 +663,7 @@ body {
 	background-color: transparent;
 }
 .navigation-item {
-	border-bottom: 1px solid @site-border-color;
+	border-bottom: 1px solid @nav-border-color;
 }
 .navigation-item .item-name {
     color: @nav-text-color;
