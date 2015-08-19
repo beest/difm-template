@@ -218,10 +218,12 @@
 
 		// Header
 		.template-header {
+			position: relative;
+			z-index: 2;
 			width: 100%;
 			max-width: 100%;
-			height: inherit;
 			padding: @header-spacing 0;
+			background-color: @header-bg-color;
 		}
 		.flex-container {
 			align-items: center;
@@ -635,6 +637,8 @@ body {
 // ----------
 
 .template-footer {
+	position: relative;
+	z-index: 2;
 	padding: @footer-spacing 0;
 
 	h1, h2, h3, h4, p {
@@ -646,12 +650,20 @@ body {
 .footer-image {
 	position: relative;
 	font-size: 0;
-	min-height: 400px;
+	min-height: 600px;
     background: transparent;
+
+    .imagewidget__image-link {
+    	width: 100%;
+    }
+    .image {
+		position: fixed;
+	    bottom: 0;
+	    z-index: 1;
+	    width: 100%;
+	}
 }
-.footer-image .image {
-	background-attachment: fixed;
-}
+
 .footer-image-text {
 	position: absolute;
     top: 0;
@@ -676,21 +688,13 @@ body {
 // Main Content
 // ------------
 
-div[role="main"].main {
-	float: none;
-	// width: 70%;
-	padding: 0;
-
-	@media @tablet800px {
-		width: 100%;
-	}
+.main {
+	position: relative;
+	z-index: 9999;
+	background-color: @site-bg-color;
 }
 
-// Intro Wrapper
-.intro-wrapper {
-	text-align: center;
-	padding: @intro-wrapper-spacing 12px;
-}
+
 
 
 // Typography / Buttons
@@ -720,7 +724,8 @@ p {
 // ----------------
 
 .feature {
-	overflow: hidden;
+	position: relative;
+	z-index: 999;
 
 	.background-image {
 		height: 100%;
