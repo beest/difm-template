@@ -34,39 +34,39 @@
         },
         "Swatch 2": {
             "color1":"#ffffff",
-            "color2":"#ca3305",
-            "color3":"#2b2d30",
-            "color4":"#2b2d30",
-            "color5":"#7a7c80",
-            "color6":"#a8aaad",
-            "color7":"#f0f0f0"
+            "color2":"#11bbdc",
+            "color3":"#ff563e",
+            "color4":"#1b3942",
+            "color5":"#636C71",
+            "color6":"#a5a5a5",
+            "color7":"#ffffff"
         },
         "Swatch 3": {
             "color1":"#ffffff",
-            "color2":"#7fa05f",
-            "color3":"#4f4f4f",
+            "color2":"#71d36b",
+            "color3":"#fa9245",
             "color4":"#2b2d30",
-            "color5":"#7a7c80",
-            "color6":"#a8aaad",
-            "color7":"#f0f0f0"
+            "color5":"#969696",
+            "color6":"#a5a5a5",
+            "color7":"#ffffff"
         },
         "Swatch 4": {
             "color1":"#ffffff",
-            "color2":"#c13e6c",
-            "color3":"#4f4f4f",
+            "color2":"#ca9e05",
+            "color3":"#fabc00",
             "color4":"#2b2d30",
-            "color5":"#7a7c80",
-            "color6":"#a8aaad",
-            "color7":"#f0f0f0"
+            "color5":"#969696",
+            "color6":"#a5a5a5",
+            "color7":"#ffffff"
         },
         "Swatch 5": {
             "color1":"#ffffff",
-            "color2":"#3e6fc1",
-            "color3":"#4f4f4f",
+            "color2":"#ca9e05",
+            "color3":"#fabc00",
             "color4":"#2b2d30",
-            "color5":"#7a7c80",
-            "color6":"#a8aaad",
-            "color7":"#f0f0f0"
+            "color5":"#969696",
+            "color6":"#a5a5a5",
+            "color7":"#ffffff"
         }
     },
     "fontSwatch": {
@@ -150,12 +150,12 @@
             "letter-spacing": "inherit"
         },
         "font10": {
-            "font-family": "\"Ek Mukta\", \"Futura\", Helvetica Neue, sans-serif",
-            "font-size": "25px",
-            "font-weight": "700",
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "20px",
+            "font-weight": "400",
             "line-height": "inherit",
             "color": "@color-swatch4",
-            "letter-spacing": "1px"
+            "letter-spacing": "inherit"
         }
     }
 }
