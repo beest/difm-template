@@ -14,6 +14,7 @@
 // Site
 @site-bg-color:         @color-swatch1;
 @site-content-bg-color: @color-swatch1;
+@site-border-color:     #e4e4e4;
 
 // Layout
 @header-bg-color:       @site-bg-color;
@@ -220,19 +221,44 @@
 			width: 100%;
 			max-width: 100%;
 			height: inherit;
-			align-items: center;
 			padding: @header-spacing 0;
 		}
-		.template-header {
-			max-width: 100%;
-
-			.template-navigation,
-			.navigation-body .navigation-list {
-				margin: 0;
+		.flex-container {
+			align-items: center;
+		}
+		.template-navigation {
+			@media @tablet800px {
+				margin-top: @header-spacing;
+				border-top: 1px solid @site-border-color;
 			}
+		}
+		.template-header {
+
+			@media @tablet800px {
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+
+			.navigation-list {
+				margin-bottom: 0;
+
+				@media @tablet800px {
+					text-align: left;
+				}
+			}
+
 			.navigation-item {
 				display: inline-block;
 				border-bottom: 0;
+
+				@media @tablet800px {
+					display: block;
+
+					&:first-child {
+						padding-top: 10px;
+						border-top: 1px solid @site-border-color;
+					}
+				}
 
 				&:last-child .item-name {
 					padding-right: 0;
@@ -240,6 +266,10 @@
 			}
 			.navigation-item .item-name {
 				padding-left: 30px;
+
+				@media @tablet800px {
+					padding-left: 0;
+				}
 
 				&.item-name--parent {
 					padding-right: 0;
@@ -309,12 +339,19 @@
 			display: flex;
 			justify-content: space-between;
 
+			@media @tablet800px {
+				display: block;
+			}
+
 			.flex-item:first-child {
 				margin-right: 20px;
 			}
 			.flex-item:last-child {
 				flex: 1 1 auto;
 			}
+		}
+		.navigation-list {
+			text-align: right;
 		}
 	}
 	.central {
@@ -324,12 +361,26 @@
 			padding-top: @header-spacing;
 			text-align: center;
 		}
+		.company-link {
+			display: block;
+			margin-top: 20px;
+		}
 	}
 	.right {
 		.flex-container {
 			display: flex;
 			flex-direction: row-reverse;
 			justify-content: space-between;
+		}
+
+		.flex-item:nth-child(2) {
+			margin: 0 20px;
+		}
+		.flex-item:last-child {
+			flex: 1 1 auto;
+		}
+		.navigation-list {
+			text-align: left;
 		}
 	}
 
