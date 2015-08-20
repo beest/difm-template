@@ -263,7 +263,7 @@
 		position: relative;
 	}
 	.overlap {
-		position: absolute;
+		position: absolute!important;
 		z-index: 7000;
 		background-color: transparent!important;
 
@@ -629,6 +629,7 @@ body {
 
 	.navigation-item {
 		display: inline-block;
+		vertical-align: middle;
 		border-bottom: 0;
 
 		@media @tablet800px {
@@ -852,6 +853,10 @@ p {
 
 // Inner Pages
 // -----------
+
+.page {
+	overflow: hidden;
+}
 
 .page--default {
 	.template-header {
