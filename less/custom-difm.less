@@ -605,6 +605,8 @@ body {
 // ----------
 
 .template-header {
+	position: relative;
+	z-index: 1000;
 
 	@media @tablet800px {
 		padding-bottom: 0!important;
@@ -708,6 +710,10 @@ body {
 	z-index: 2;
 	padding: @footer-spacing 0;
 
+	@media @mobile650px {
+		padding: @footer-spacing * 0.7;
+	}
+
 	h1, h2, h3, h4, p {
 		margin-bottom: 20px;
 	}
@@ -749,6 +755,8 @@ body {
 .footer-image-text {
 	position: absolute;
     top: 45%;
+    left: 0;
+    right: 0;
     z-index: 9000;
     width: 90%;
     margin: 0 auto;
@@ -799,6 +807,9 @@ p {
 // ----------------
 
 .feature {
+	position: relative;
+	z-index: 999;
+
 	.background-image {
 		height: 100%;
 	    background-repeat: no-repeat;
