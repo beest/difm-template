@@ -29,3 +29,18 @@
 </div>
 
 {% endblock %}
+
+{% block scripts %}
+
+	<script>
+		// Masonry effect
+		var container = document.querySelector('.gallery-list');
+
+		imagesLoaded( container, function() {
+			var msnry = new Masonry( container, {
+				itemSelector: '.gallery-item'
+			});
+		});
+	</script>
+
+{% endblock %}
