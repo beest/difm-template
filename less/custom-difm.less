@@ -717,7 +717,7 @@ body {
 .footer-image {
 	position: relative;
 	font-size: 0;
-	z-index: -1;
+	z-index: 1;
 
     .imagewidget__image-link {
     	width: 100%;
@@ -729,7 +729,7 @@ body {
 	    width: 100%;
 	}
 	.imagewidget {
-		min-height: 600px;
+		min-height: 500px;
 
 		@media @tablet800px {
 			min-height: 400px;
@@ -737,13 +737,21 @@ body {
 	}
 }
 
+.footer-image-overlay {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: hsla(hue(@feature-overlay-color), saturation(@feature-overlay-color), lightness(@feature-overlay-color), @feature-overlay-opacity);
+}
+
 .footer-image-text {
 	position: absolute;
     top: 45%;
-    left: 0;
-    right: 0;
     z-index: 9000;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     text-align: center;
 
 	h1, h2, h3, h4, p {
