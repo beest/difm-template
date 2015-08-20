@@ -73,7 +73,7 @@
 	.header-layout .left;
 
 	// Position (Options: .standard, .overlap)
-	.header-position .overlap;
+	.header-position .standard;
 
 	// BG Colour (Options: .dark, .light)
 	.header-color .light;
@@ -95,7 +95,7 @@
 		.feature-height .medium;
 
 		// Position (Options: .standard, .overlap)
-		.feature-position .overlap;
+		.feature-position .standard;
 
 		// Alignment (Options: .left, .right, .center)
 		.feature-alignment .center;
@@ -273,7 +273,7 @@
 
 		.navigation-item .item-name:hover,
 		.navigation-item.selected .item-name {
-			color: @site-bg-color!important;
+			color: @site-bg-color;
 		}
 		.navigation-item.folder .item-name:hover {
 			color: @heading-color;
@@ -648,7 +648,7 @@ body {
 
 .template-header {
 	position: relative;
-	z-index: 1000;
+	z-index: 8001;
 
 	@media @tablet800px {
 		padding-bottom: 0!important;
@@ -919,6 +919,10 @@ p {
 		position: relative!important;
 
 		.header-color .light!important;
+
+		.company-link {
+			color: @heading-color;
+		}
 	}
 }
 
